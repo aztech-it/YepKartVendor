@@ -8,9 +8,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.YepKartVendor">
+        android:theme="@style/Theme.YepKart">
         <activity
             android:name=".SplashActivity"
+            android:theme="@style/Theme.YepKart.SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

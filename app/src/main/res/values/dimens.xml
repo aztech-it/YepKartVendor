@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- TYPOGRAPHY -->
+
+    <dimen name="text_extra_large">64sp</dimen>
+    <dimen name="text_large">48sp</dimen>
+    <dimen name="text_h1">32sp</dimen>
+    <dimen name="text_h2">24sp</dimen>
+    <dimen name="text_h3">19sp</dimen>
+    <dimen name="text_h4">16sp</dimen>
+    <dimen name="text_h5">13sp</dimen>
+    <dimen name="text_h6">11sp</dimen>
+    <dimen name="text_t1">32sp</dimen>
+    <dimen name="text_t2">24sp</dimen>
+    <dimen name="text_t3">19sp</dimen>
+    <dimen name="text_t4">16sp</dimen>
+    <dimen name="text_t5">13sp</dimen>
+    <dimen name="text_t6">11sp</dimen>
+    <dimen name="text_span">14sp</dimen>
+    <dimen name="text_small">10sp</dimen>
+
+    <!-- LAYOUT -->
+
+    <dimen name="offset_0">0dp</dimen>
+    <dimen name="offset_5">5dp</dimen>
+    <dimen name="offset_10">10dp</dimen>
+    <dimen name="offset_15">15dp</dimen>
+    <dimen name="offset_20">20dp</dimen>
+    <dimen name="offset_25">25dp</dimen>
+    <dimen name="offset_30">30dp</dimen>
+    <dimen name="offset_35">35dp</dimen>
+    <dimen name="offset_40">40dp</dimen>
+    <dimen name="offset_45">45dp</dimen>
+    <dimen name="offset_50">50dp</dimen>
+    <dimen name="offset_55">55dp</dimen>
+    <dimen name="offset_60">60dp</dimen>
+    <dimen name="offset_65">65dp</dimen>
+    <dimen name="offset_70">70dp</dimen>
+    <dimen name="offset_75">75dp</dimen>
+    <dimen name="offset_80">80dp</dimen>
+    <dimen name="offset_85">85dp</dimen>
+    <dimen name="offset_90">90dp</dimen>
+    <dimen name="offset_95">95dp</dimen>
+    <dimen name="offset_100">100dp</dimen>
+
+    <!-- DESIGN -->
+
+    <dimen name="round_0">0dp</dimen>
+    <dimen name="round_1">1dp</dimen>
+    <dimen name="round_2">2dp</dimen>
+    <dimen name="round_3">3dp</dimen>
+    <dimen name="round_4">4dp</dimen>
+    <dimen name="round_5">5dp</dimen>
+    <dimen name="round_6">6dp</dimen>
+    <dimen name="round_7">7dp</dimen>
+    <dimen name="round_8">8dp</dimen>
+    <dimen name="round_9">9dp</dimen>
+    <dimen name="round_10">10dp</dimen>
+    <dimen name="round_12">12dp</dimen>
+    <dimen name="round_14">14dp</dimen>
+    <dimen name="round_16">16dp</dimen>
+    <dimen name="round_18">18dp</dimen>
+    <dimen name="round_20">20dp</dimen>
+
+    <!-- GENERAL -->
+
+    <dimen name="common_0">0dp</dimen>
+    <dimen name="common_1">1dp</dimen>
+    <dimen name="common_2">2dp</dimen>
+    <dimen name="common_3">3dp</dimen>
+    <dimen name="common_4">4dp</dimen>
+    <dimen name="common_5">5dp</dimen>
+    <dimen name="common_6">6dp</dimen>
+    <dimen name="common_7">7dp</dimen>
+    <dimen name="common_8">8dp</dimen>
+    <dimen name="common_9">9dp</dimen>
+    <dimen name="common_10">10dp</dimen>
+    <dimen name="common_11">11dp</dimen>
+    <dimen name="common_12">12dp</dimen>
+    <dimen name="common_13">13dp</dimen>
+    <dimen name="common_14">14dp</dimen>
+    <dimen name="common_15">15dp</dimen>
+    <dimen name="common_16">16dp</dimen>
+    <dimen name="common_17">17dp</dimen>
+    <dimen name="common_18">18dp</dimen>
+    <dimen name="common_19">19dp</dimen>
+    <dimen name="common_20">20dp</dimen>
+    <dimen name="common_21">21dp</dimen>
+    <dimen name="common_22">22dp</dimen>
+    <dimen name="common_23">23dp</dimen>
+    <dimen name="common_24">24dp</dimen>
+    <dimen name="common_25">25dp</dimen>
+    <dimen name="common_26">26dp</dimen>
+    <dimen name="common_27">27dp</dimen>
+    <dimen name="common_28">28dp</dimen>
+    <dimen name="common_29">29dp</dimen>
+    <dimen name="common_30">30dp</dimen>
+    <dimen name="common_31">31dp</dimen>
+    <dimen name="common_32">32dp</dimen>
+    <dimen name="common_33">33dp</dimen>
+    <dimen name="common_34">34dp</dimen>
+    <dimen name="common_35">35dp</dimen>
+    <dimen name="common_36">36dp</dimen>
+    <dimen name="common_37">37dp</dimen>
+    <dimen name="common_38">38dp</dimen>
+    <dimen name="common_39">39dp</dimen>
+    <dimen name="common_40">40dp</dimen>
+    <dimen name="common_41">41dp</dimen>
+    <dimen name="common_42">42dp</dimen>
+    <dimen name="common_43">43dp</dimen>
+    <dimen name="common_44">44dp</dimen>
+    <dimen name="common_45">45dp</dimen>
+    <dimen name="common_46">46dp</dimen>
+    <dimen name="common_47">47dp</dimen>
+    <dimen name="common_48">48dp</dimen>
+    <dimen name="common_49">49dp</dimen>
+    <dimen name="common_50">50dp</dimen>
+    <dimen name="common_60">60dp</dimen>
+    <dimen name="common_62">62dp</dimen>
+    <dimen name="common_75">75dp</dimen>
+    <dimen name="common_100">100dp</dimen>
+    <dimen name="common_125">125dp</dimen>
+    <dimen name="common_150">150dp</dimen>
+    <dimen name="common_175">175dp</dimen>
+    <dimen name="common_200">200dp</dimen>
+    <dimen name="common_250">250dp</dimen>
+    <dimen name="common_275">275dp</dimen>
+    <dimen name="common_300">300dp</dimen>
+    <dimen name="common_350">350dp</dimen>
+    <dimen name="common_400">400dp</dimen>
+    <dimen name="common_450">450dp</dimen>
+    <dimen name="common_500">500dp</dimen>
+
+</resources>
