@@ -10,9 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.YepKart">
         <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:theme="@style/Theme.YepKart.NoActionBar"/>
+        <activity
             android:name=".SplashActivity"
-            android:theme="@style/Theme.YepKart.SplashScreen"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.YepKart.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
