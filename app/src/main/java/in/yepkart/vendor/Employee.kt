@@ -1,14 +1,28 @@
 package `in`.yepkart.vendor
 
-class Employee( name: String, mobile: String, email: String, pan: String, address: String, salary: Float, status: Boolean) {
+class Employee {
 
-    private var name: String = name
-    private var mobile: String = mobile
-    private var email: String = email
-    private var pan: String = pan
-    private var address: String = address
-    private var salary: Float = salary
-    private var status: Boolean = status
+    private lateinit var name: String
+    private lateinit var mobile: String
+    private lateinit var email: String
+    private lateinit var pan: String
+    private lateinit var address: String
+    private var salary: Float = 0.0f
+    private var status: Boolean = false
+
+    constructor() {
+
+    }
+
+    constructor(name: String, mobile: String, email: String, pan: String, address: String, salary: Float, status: Boolean) {
+        this.name = name
+        this.mobile = mobile
+        this.email = email
+        this.pan = pan
+        this.address = address
+        this.salary = salary
+        this.status = status
+    }
 
     fun getName() : String {
         return name
