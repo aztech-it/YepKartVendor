@@ -1,78 +1,43 @@
 package `in`.yepkart.vendor
 
-import android.R.attr
-import androidx.appcompat.app.AppCompatActivity
+import `in`.yepkart.vendor.databinding.ActivityMainBinding
 import android.os.Bundle
-import android.widget.EditText
-import android.widget.Toast
-import com.google.android.gms.tasks.OnCompleteListener
-import com.google.android.gms.tasks.Task
-import com.google.firebase.database.*
-import com.google.firebase.database.ktx.database
-import com.google.firebase.database.ktx.getValue
-import com.google.firebase.ktx.Firebase
-import android.R.attr.data
-import android.widget.TextView
-
+import android.view.Gravity
+import android.view.Menu
+import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.content.res.AppCompatResources
+import androidx.drawerlayout.widget.DrawerLayout
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+
+    private var mDrawerLayout: DrawerLayout? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
-        var empList = ArrayList<Employee>()
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        var txtEmpName = findViewById<TextView>(R.id.txtEmpName)
+        setSupportActionBar(binding.appBarMain.toolbar)
 
-        var dbRef: DatabaseReference = Firebase.database.reference
+        mDrawerLayout = findViewById<DrawerLayout>(R.id.drawer_layout)
 
-        var query = dbRef.child("employee")
+        binding.appBarMain.toolbar.navigationIcon = AppCompatResources.getDrawable(this, R.drawable.ic_hamburger)
+    }
 
-        query.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                for (postSnapshot in snapshot.children) {
-                    val emp = postSnapshot.getValue(Employee::class.java)!!
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.main, menu)
+        return true
+    }
 
-                    empList.add(emp)
-                }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == android.R.id.home) {
+            mDrawerLayout!!.openDrawer(Gravity.START)
+        }
 
-                txtEmpName.text = empList.size.toString()
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
-            }
-
-        })
-
-
-
-//        query.addChildEventListener(object : ChildEventListener {
-//            override fun onChildAdded(snapshot: DataSnapshot, previousChildName: String?) {
-//                val emp = snapshot.getValue(Employee::class.java)!!
-//
-//                empList.add(emp)
-
-//                  txtEmpName.text = empList.size.toString()
-//            }
-//
-//            override fun onChildChanged(snapshot: DataSnapshot, previousChildName: String?) {
-//
-//            }`
-//
-//            override fun onChildRemoved(snapshot: DataSnapshot) {
-//
-//            }
-//
-//            override fun onChildMoved(snapshot: DataSnapshot, previousChildName: String?) {
-//
-//            }
-//
-//            override fun onCancelled(error: DatabaseError) {
-//                TODO("Not yet implemented")
-//            }
-//
-//        })
-
+        return true
     }
 }

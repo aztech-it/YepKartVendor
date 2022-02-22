@@ -131,5 +131,11 @@
     <dimen name="common_400">400dp</dimen>
     <dimen name="common_450">450dp</dimen>
     <dimen name="common_500">500dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="nav_header_vertical_spacing">8dp</dimen>
+    <dimen name="nav_header_height">176dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 
 </resources>
