@@ -25,4 +25,18 @@
 
     <style name="Theme.YepKart.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
 
+    <style name="Theme.YepKart.Title">
+        <item name="android:textSize">@dimen/text_t4</item>
+    </style>
+
+    <style name="Theme.YepKart.SubTitle">
+        <item name="android:textSize">@dimen/text_t6</item>
+    </style>
+
+    <style name="Theme.YepKart.BottomNavigationView">
+        <item name="fontFamily">@font/varela_round</item>
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
 </resources>

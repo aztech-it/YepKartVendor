@@ -3,13 +3,13 @@
 
     <!-- THEME COLORS -->
     <color name="colorPrimary">#FFFFFFFF</color>
-    <color name="colorAccent">#FF0084FF</color>
+    <color name="colorAccent">#FFFFC15C</color>
     <color name="colorSecondary">#FFF3E5F5</color>
     <color name="colorSecondaryAccent">#FF4A148C</color>
     <color name="colorText">#FF222222</color>
-    <color name="colorDark">#FF0E0D12</color>
+    <color name="colorDark">#FF282D33</color>
     <color name="colorDisable">#FF999999</color>
-    <color name="colorBackground">#EFEFEF</color>
+    <color name="colorBackground">#FFEFEFEF</color>
 
     <!-- COMMON COLORS -->
     <color name="colorMuted">#FFE9E9E9</color>

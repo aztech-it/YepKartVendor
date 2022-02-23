@@ -1,6 +1,5 @@
 package `in`.yepkart.vendor
 
-import `in`.yepkart.vendor.databinding.ActivityMainBinding
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -9,11 +8,23 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import `in`.yepkart.vendor.databinding.ActivityMainBinding
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.navigation.NavigationView
+import com.google.android.material.bottomappbar.BottomAppBar
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.shape.CornerFamily
+import com.google.android.material.shape.RelativeCornerSize
+import com.google.android.material.shape.RoundedCornerTreatment
+import com.google.android.material.shape.MaterialShapeDrawable
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var binding: ActivityMainBinding
+    private lateinit var navController: NavController
+    private lateinit var navHostFragment: NavHostFragment
 
     private var mDrawerLayout: DrawerLayout? = null
 
@@ -30,11 +41,25 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         binding.appBarMain.toolbar.navigationIcon = AppCompatResources.getDrawable(this, R.drawable.ic_hamburger)
 
         supportActionBar!!.title = "Welcome User"
-        supportActionBar!!.subtitle = "Administrator"
+        supportActionBar!!.subtitle = "Ranaghat, Nadia"
 
         val navView = findViewById<NavigationView>(R.id.nav_view)
+        val bottomAppBar = findViewById<BottomAppBar>(R.id.app_bar)
+        val bottomNavigation = findViewById<BottomNavigationView>(R.id.navigation_bar)
 
         navView.setNavigationItemSelectedListener(this)
+
+        val radius = resources.getDimension(R.dimen.round_20)
+
+        val shapeDrawable : MaterialShapeDrawable= bottomAppBar.background as MaterialShapeDrawable
+        shapeDrawable.shapeAppearanceModel = shapeDrawable.shapeAppearanceModel
+            .toBuilder()
+            .setAllCorners(CornerFamily.ROUNDED, radius)
+            .build()
+
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.main_nav_host_fragment) as NavHostFragment
+        navController = navHostFragment.navController
+        bottomNavigation.setupWithNavController(navController)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
