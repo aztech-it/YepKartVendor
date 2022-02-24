@@ -10,9 +10,37 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.YepKart">
         <activity
+            android:name=".TourActivity"
+            android:exported="false"
+            android:theme="@style/Theme.YepKart.NoActionBar" />
+        <activity
+            android:name=".AboutActivity"
+            android:exported="false"
+            android:theme="@style/Theme.YepKart.NoActionBar" />
+        <activity
+            android:name=".LegalActivity"
+            android:exported="false"
+            android:theme="@style/Theme.YepKart.NoActionBar" />
+        <activity
+            android:name=".WalletActivity"
+            android:exported="false"
+            android:theme="@style/Theme.YepKart.NoActionBar" />
+        <activity
+            android:name=".PaymentActivity"
+            android:exported="false"
+            android:theme="@style/Theme.YepKart.NoActionBar" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false"
+            android:theme="@style/Theme.YepKart.NoActionBar" />
+        <activity
+            android:name=".TaskActivity"
+            android:exported="false"
+            android:theme="@style/Theme.YepKart.NoActionBar" />
+        <activity
             android:name=".MainActivity"
             android:exported="false"
-            android:theme="@style/Theme.YepKart.NoActionBar"/>
+            android:theme="@style/Theme.YepKart.NoActionBar" />
         <activity
             android:name=".SplashActivity"
             android:exported="true"

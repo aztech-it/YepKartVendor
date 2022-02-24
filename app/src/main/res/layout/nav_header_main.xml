@@ -3,20 +3,17 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/common_200"
+    android:layout_height="@dimen/common_250"
     android:background="@drawable/side_nav_bar"
     android:gravity="center"
     android:orientation="vertical"
-    android:paddingLeft="@dimen/common_16"
-    android:paddingTop="@dimen/common_16"
-    android:paddingRight="@dimen/common_16"
-    android:paddingBottom="@dimen/common_16"
+    android:padding="@dimen/offset_20"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="84dp"
-        android:layout_height="84dp"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
         android:layout_marginBottom="@dimen/offset_15"
         android:contentDescription="@string/nav_header_desc"
         app:srcCompat="@drawable/avatar"/>

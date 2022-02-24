@@ -13,7 +13,7 @@
         <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
         <item name="android:windowLightStatusBar">false</item>
         <item name="windowNoTitle">true</item>
-        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:statusBarColor">@color/colorDark</item>
     </style>
 
     <style name="Theme.YepKart.SplashScreen" parent="Theme.YepKart.NoActionBar">

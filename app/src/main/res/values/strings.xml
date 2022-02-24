@@ -11,6 +11,11 @@
 
     <string name="menu_home">Home</string>
     <string name="menu_task">Task</string>
-    <string name="menu_wallet">Wallet</string>
     <string name="menu_analytics">Analytics</string>
+    <string name="menu_profile">Profile</string>
+    <string name="menu_payment">Payment History</string>
+    <string name="menu_wallet">Wallet</string>
+    <string name="menu_legal">Legal</string>
+    <string name="menu_about">About Us</string>
+    <string name="menu_tour">Take a Tour</string>
 </resources>

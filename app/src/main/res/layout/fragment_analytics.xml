@@ -12,19 +12,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="@id/home_container"
-        android:padding="@dimen/offset_10"
+        android:paddingVertical="@dimen/offset_15"
+        android:paddingHorizontal="@dimen/offset_20"
         android:orientation="vertical">
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="@dimen/common_200"
-            app:cardBackgroundColor="@color/colorAccent">
+            app:cardBackgroundColor="@color/colorAccent"
+            app:cardCornerRadius="@dimen/round_20">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal|center_vertical"
-                android:text="Analytics"/>
+                android:text="@string/menu_analytics"/>
 
         </com.google.android.material.card.MaterialCardView>
 

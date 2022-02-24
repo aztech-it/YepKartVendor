@@ -7,7 +7,7 @@
             android:icon="@drawable/ic_home"
             android:title="@string/menu_home"/>
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_blank"
             android:enabled="false"
             android:title=""/>
         <item

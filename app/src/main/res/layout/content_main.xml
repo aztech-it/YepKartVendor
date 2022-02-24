@@ -13,7 +13,7 @@
         android:id="@+id/main_nav_host_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/common_275"
+        android:layout_marginTop="@dimen/common_75"
         android:name="androidx.navigation.fragment.NavHostFragment"
         app:defaultNavHost="true"
         app:navGraph="@navigation/nav_graph_main"/>
@@ -25,6 +25,7 @@
         android:layout_marginHorizontal="@dimen/common_15"
         android:layout_marginBottom="@dimen/common_15"
         android:layout_gravity="bottom"
+        app:backgroundTint="@color/colorWhite"
         app:elevation="@dimen/round_0"
         app:fabCradleMargin="@dimen/common_12"
         app:fabCradleRoundedCornerRadius="@dimen/common_15"
