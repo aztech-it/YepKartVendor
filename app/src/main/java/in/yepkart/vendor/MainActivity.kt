@@ -29,6 +29,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private var mDrawerLayout: DrawerLayout? = null
     private lateinit var btnTask: FloatingActionButton
 
+    private var clickedItem: Int = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -44,6 +46,56 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         supportActionBar!!.title = "Welcome User"
         supportActionBar!!.subtitle = "Ranaghat, Nadia"
+
+        mDrawerLayout!!.addDrawerListener(object: DrawerLayout.DrawerListener {
+            override fun onDrawerSlide(drawerView: View, slideOffset: Float) {
+
+            }
+
+            override fun onDrawerOpened(drawerView: View) {
+
+            }
+
+            override fun onDrawerClosed(drawerView: View) {
+                when (clickedItem) {
+                    R.id.nav_profile -> {
+                        val intent = Intent(this@MainActivity, ProfileActivity::class.java)
+                        startActivity(intent)
+                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+                    }
+                    R.id.nav_payment -> {
+                        val intent = Intent(this@MainActivity, PaymentActivity::class.java)
+                        startActivity(intent)
+                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+                    }
+                    R.id.nav_wallet -> {
+                        val intent = Intent(this@MainActivity, WalletActivity::class.java)
+                        startActivity(intent)
+                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+                    }
+                    R.id.nav_legal -> {
+                        val intent = Intent(this@MainActivity, LegalActivity::class.java)
+                        startActivity(intent)
+                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+                    }
+                    R.id.nav_about -> {
+                        val intent = Intent(this@MainActivity, AboutActivity::class.java)
+                        startActivity(intent)
+                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+                    }
+                    R.id.nav_tour -> {
+                        val intent = Intent(this@MainActivity, TourActivity::class.java)
+                        startActivity(intent)
+                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+                    }
+                }
+            }
+
+            override fun onDrawerStateChanged(newState: Int) {
+
+            }
+
+        })
 
         val navView = findViewById<NavigationView>(R.id.nav_view)
         val bottomAppBar = findViewById<BottomAppBar>(R.id.app_bar)
@@ -86,55 +138,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         mDrawerLayout!!.closeDrawer(GravityCompat.START)
 
-        mDrawerLayout!!.addDrawerListener(object: DrawerLayout.DrawerListener {
-            override fun onDrawerSlide(drawerView: View, slideOffset: Float) {
-
-            }
-
-            override fun onDrawerOpened(drawerView: View) {
-
-            }
-
-            override fun onDrawerClosed(drawerView: View) {
-                when (item.itemId) {
-                    R.id.nav_profile -> {
-                        val intent = Intent(this@MainActivity, ProfileActivity::class.java)
-                        startActivity(intent)
-                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
-                    }
-                    R.id.nav_payment -> {
-                        val intent = Intent(this@MainActivity, PaymentActivity::class.java)
-                        startActivity(intent)
-                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
-                    }
-                    R.id.nav_wallet -> {
-                        val intent = Intent(this@MainActivity, WalletActivity::class.java)
-                        startActivity(intent)
-                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
-                    }
-                    R.id.nav_legal -> {
-                        val intent = Intent(this@MainActivity, LegalActivity::class.java)
-                        startActivity(intent)
-                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
-                    }
-                    R.id.nav_about -> {
-                        val intent = Intent(this@MainActivity, AboutActivity::class.java)
-                        startActivity(intent)
-                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
-                    }
-                    R.id.nav_tour -> {
-                        val intent = Intent(this@MainActivity, TourActivity::class.java)
-                        startActivity(intent)
-                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
-                    }
-                }
-            }
-
-            override fun onDrawerStateChanged(newState: Int) {
-
-            }
-
-        })
+        clickedItem = item.itemId
 
         return true
     }
