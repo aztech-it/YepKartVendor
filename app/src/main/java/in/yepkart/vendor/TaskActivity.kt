@@ -1,7 +1,10 @@
 package `in`.yepkart.vendor
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.MenuItem
+import android.view.View
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 
@@ -16,6 +19,13 @@ class TaskActivity : AppCompatActivity() {
         toolBar = findViewById(R.id.toolbar)
 
         setSupportActionBar(toolBar)
+
+        window.apply {
+            clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
+            addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+            decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+            statusBarColor = Color.TRANSPARENT
+        }
 
         supportActionBar!!.title = "All Tasks"
         supportActionBar!!.setHomeButtonEnabled(true)
