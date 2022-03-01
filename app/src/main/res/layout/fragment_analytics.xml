@@ -12,21 +12,39 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="@id/home_container"
-        android:paddingVertical="@dimen/offset_15"
-        android:paddingHorizontal="@dimen/offset_20"
+        android:paddingVertical="@dimen/offset_10"
+        android:paddingHorizontal="@dimen/offset_15"
         android:orientation="vertical">
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
-            android:layout_height="@dimen/common_200"
-            app:cardBackgroundColor="@color/colorAccent"
-            app:cardCornerRadius="@dimen/round_20">
+            android:layout_height="@dimen/common_500"
+            android:layout_margin="@dimen/offset_5"
+            app:cardBackgroundColor="@color/colorAccentAlt"
+            app:cardCornerRadius="@dimen/round_20"
+            app:cardElevation="@dimen/round_3">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:text="@string/menu_analytics"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:padding="@dimen/offset_20"
+                    android:text="@string/title_earnings"
+                    style="@style/Theme.YepKart.H4"/>
+
+                <in.yepkart.vendor.controls.RoundedBarChart
+                    android:id="@+id/bar_chart"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/common_200"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="@dimen/common_125"
+                    android:layout_alignParentBottom="true"/>
+
+            </RelativeLayout>
 
         </com.google.android.material.card.MaterialCardView>
 

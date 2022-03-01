@@ -3,13 +3,14 @@
 
     <!-- THEME COLORS -->
     <color name="colorPrimary">#FFFFFFFF</color>
-    <color name="colorAccent">#FFFFC15C</color>
+    <color name="colorAccent">#FFF0AD00</color>
     <color name="colorSecondary">#FFF3E5F5</color>
     <color name="colorSecondaryAccent">#FF4A148C</color>
     <color name="colorText">#FF222222</color>
     <color name="colorDark">#FF282D33</color>
     <color name="colorDisable">#FF999999</color>
     <color name="colorBackground">#FFEFEFEF</color>
+    <color name="colorAccentAlt">#FFADD5DB</color>
 
     <!-- COMMON COLORS -->
     <color name="colorMuted">#FFE9E9E9</color>
@@ -17,13 +18,13 @@
     <color name="colorHint">#FF999999</color>
     <color name="colorWhite">#FFFFFFFF</color>
     <color name="colorBlack">#FF000000</color>
-    <color name="colorSuccessLight">#FFF1F8E9</color>
-    <color name="colorSuccessDark">#FF509735</color>
-    <color name="colorInfoLight">#FFE3F2FD</color>
-    <color name="colorInfoDark">#FF2D6ED3</color>
-    <color name="colorWarningLight">#FFFFFDE7</color>
-    <color name="colorWarningDark">#FFF57F17</color>
-    <color name="colorDangerLight">#FFFFEBEE</color>
-    <color name="colorDangerDark">#FFB71C1C</color>
+    <color name="colorSuccessLight">#F1F8E9</color>
+    <color name="colorSuccessDark">#509735</color>
+    <color name="colorInfoLight">#E3F2FD</color>
+    <color name="colorInfoDark">#2D6ED3</color>
+    <color name="colorWarningLight">#FFFDE7</color>
+    <color name="colorWarningDark">#F57F17</color>
+    <color name="colorDangerLight">#FFEBEE</color>
+    <color name="colorDangerDark">#B71C1C</color>
 
 </resources>

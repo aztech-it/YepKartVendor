@@ -18,4 +18,6 @@
     <string name="menu_legal">Legal</string>
     <string name="menu_about">About Us</string>
     <string name="menu_tour">Take a Tour</string>
+
+    <string name="title_earnings">EARNINGS</string>
 </resources>
