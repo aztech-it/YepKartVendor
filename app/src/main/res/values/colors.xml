@@ -3,14 +3,14 @@
 
     <!-- THEME COLORS -->
     <color name="colorPrimary">#FFFFFFFF</color>
-    <color name="colorAccent">#FFF0AD00</color>
+    <color name="colorAccent">#FFFEB249</color>
     <color name="colorSecondary">#FFF3E5F5</color>
-    <color name="colorSecondaryAccent">#FF4A148C</color>
+    <color name="colorSecondaryAccent">#FF353755</color>
     <color name="colorText">#FF222222</color>
     <color name="colorDark">#FF282D33</color>
     <color name="colorDisable">#FF999999</color>
     <color name="colorBackground">#FFEFEFEF</color>
-    <color name="colorAccentAlt">#ddf2f6</color>
+    <color name="colorAccentAlt">#FFE9E9E6</color>
 
     <!-- COMMON COLORS -->
     <color name="colorMuted">#FFE9E9E9</color>
@@ -26,5 +26,7 @@
     <color name="colorWarningDark">#F57F17</color>
     <color name="colorDangerLight">#FFEBEE</color>
     <color name="colorDangerDark">#B71C1C</color>
+
+    <color name="colorBarChart">#FFFF1744</color>
 
 </resources>

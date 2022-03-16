@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:scrollbars="none"
     tools:context=".ui.analytics.AnalyticsFragment">
 
     <LinearLayout
@@ -163,6 +164,7 @@
                         android:layout_height="@dimen/common_28"
                         android:layout_alignParentTop="true"
                         android:layout_alignParentEnd="true"
+                        android:contentDescription="@string/title_jobs_done"
                         android:src="@drawable/ic_task"/>
 
                     <LinearLayout
@@ -187,7 +189,7 @@
                             style="@style/Theme.YepKart.H6"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="JOBS DONE"
+                            android:text="@string/title_jobs_done"
                             android:textColor="@color/colorHint"/>
 
                     </LinearLayout>
@@ -216,6 +218,7 @@
                         android:layout_height="@dimen/common_28"
                         android:layout_alignParentTop="true"
                         android:layout_alignParentEnd="true"
+                        android:contentDescription="@string/title_revenue_earned"
                         android:src="@drawable/ic_rupee"/>
 
                     <LinearLayout
@@ -240,7 +243,7 @@
                             style="@style/Theme.YepKart.H6"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="REVENUE EARNED"
+                            android:text="@string/title_revenue_earned"
                             android:textColor="@color/colorHint"/>
 
                     </LinearLayout>
@@ -269,6 +272,7 @@
                         android:layout_height="@dimen/common_28"
                         android:layout_alignParentTop="true"
                         android:layout_alignParentEnd="true"
+                        android:contentDescription="@string/title_received_amount"
                         android:src="@drawable/ic_bank"/>
 
                     <LinearLayout
@@ -293,7 +297,7 @@
                             style="@style/Theme.YepKart.H6"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="RECEIVED AMOUNT"
+                            android:text="@string/title_received_amount"
                             android:textColor="@color/colorHint"/>
 
                     </LinearLayout>
@@ -322,6 +326,7 @@
                         android:layout_height="@dimen/common_28"
                         android:layout_alignParentTop="true"
                         android:layout_alignParentEnd="true"
+                        android:contentDescription="@string/title_pending_amount"
                         android:src="@drawable/ic_pending"/>
 
                     <LinearLayout
@@ -346,7 +351,7 @@
                             style="@style/Theme.YepKart.H6"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="PENDING AMOUNT"
+                            android:text="@string/title_pending_amount"
                             android:textColor="@color/colorHint"/>
 
                     </LinearLayout>

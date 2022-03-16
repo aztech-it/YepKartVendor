@@ -71,6 +71,36 @@
         <item name="android:textSize">@dimen/text_h6</item>
     </style>
 
+    <style name="Theme.YepKart.T1">
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:textSize">@dimen/text_h1</item>
+    </style>
+
+    <style name="Theme.YepKart.T2">
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:textSize">@dimen/text_h2</item>
+    </style>
+
+    <style name="Theme.YepKart.T3">
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:textSize">@dimen/text_h3</item>
+    </style>
+
+    <style name="Theme.YepKart.T4">
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:textSize">@dimen/text_h4</item>
+    </style>
+
+    <style name="Theme.YepKart.T5">
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:textSize">@dimen/text_h5</item>
+    </style>
+
+    <style name="Theme.YepKart.T6">
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:textSize">@dimen/text_h6</item>
+    </style>
+
     <style name="Theme.YepKart.B">
         <item name="android:fontFamily">@font/montserrat_semibold</item>
     </style>

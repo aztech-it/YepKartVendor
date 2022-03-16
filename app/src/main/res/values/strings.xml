@@ -22,4 +22,13 @@
     <string name="title_earnings">EARNINGS (THIS WEEK)</string>
     <string name="title_last_week">LAST WEEK</string>
     <string name="title_current_week">THIS WEEK</string>
+    <string name="title_add_money">ADD MONEY</string>
+    <string name="title_gift_voucher">VOUCHER</string>
+    <string name="title_settings">SETTINGS</string>
+    <string name="title_jobs_done">JOBS DONE</string>
+    <string name="title_revenue_earned">REVENUE EARNED</string>
+    <string name="title_received_amount">RECEIVED AMOUNT</string>
+    <string name="title_pending_amount">PENDING AMOUNT</string>
+
+    <string name="heading_transaction_history">Transaction History</string>
 </resources>

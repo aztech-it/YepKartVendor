@@ -108,7 +108,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         navView.setNavigationItemSelectedListener(this)
 
-        val radius = resources.getDimension(R.dimen.round_20)
+        val radius = resources.getDimension(R.dimen.round_10)
 
         val shapeDrawable : MaterialShapeDrawable= bottomAppBar.background as MaterialShapeDrawable
         shapeDrawable.shapeAppearanceModel = shapeDrawable.shapeAppearanceModel

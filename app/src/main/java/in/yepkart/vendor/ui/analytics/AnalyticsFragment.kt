@@ -102,8 +102,8 @@ class AnalyticsFragment : Fragment() {
             set = barChart.data.getDataSetByIndex(0) as BarDataSet
             set.values = values
 
-            val color1 = ContextCompat.getColor(binding.root.context, R.color.colorSuccessDark)
-            val color2 = ContextCompat.getColor(binding.root.context, R.color.colorSuccessDark)
+            val color1 = ContextCompat.getColor(binding.root.context, R.color.colorBarChart)
+            val color2 = ContextCompat.getColor(binding.root.context, R.color.colorBarChart)
             set.color = color1
             set.highLightColor = color2
 
@@ -114,8 +114,8 @@ class AnalyticsFragment : Fragment() {
             set = BarDataSet(values, "")
             set.setDrawIcons(false)
 
-            val color1 = ContextCompat.getColor(binding.root.context, R.color.colorSuccessDark)
-            val color2 = ContextCompat.getColor(binding.root.context, R.color.colorSuccessDark)
+            val color1 = ContextCompat.getColor(binding.root.context, R.color.colorBarChart)
+            val color2 = ContextCompat.getColor(binding.root.context, R.color.colorBarChart)
             set.color = color1
             set.highLightColor = color2
 
@@ -139,10 +139,25 @@ class AnalyticsFragment : Fragment() {
         set["FEBRUARY"] = 400
 
         val colors: ArrayList<Int> = ArrayList()
-        colors.add(Color.parseColor("#CD982C"))
-        colors.add(Color.parseColor("#049BB9"))
-        colors.add(Color.parseColor("#5B919E"))
-        colors.add(Color.parseColor("#F9B400"))
+        colors.add(Color.parseColor("#F44336"))
+        colors.add(Color.parseColor("#FFC107"))
+        colors.add(Color.parseColor("#03A9F4"))
+        colors.add(Color.parseColor("#4CAF50"))
+        colors.add(Color.parseColor("#673AB7"))
+        colors.add(Color.parseColor("#FF5722"))
+        colors.add(Color.parseColor("#607D8B"))
+        colors.add(Color.parseColor("#795548"))
+        colors.add(Color.parseColor("#FFEB3B"))
+        colors.add(Color.parseColor("#8BC34A"))
+        colors.add(Color.parseColor("#00BCD4"))
+        colors.add(Color.parseColor("#3F51B5"))
+        colors.add(Color.parseColor("#E91E63"))
+        colors.add(Color.parseColor("#9C27B0"))
+        colors.add(Color.parseColor("#2196F3"))
+        colors.add(Color.parseColor("#009688"))
+        colors.add(Color.parseColor("#CDDC39"))
+        colors.add(Color.parseColor("#FF9800"))
+        colors.add(Color.parseColor("#9E9E9E"))
 
         for (type in set.keys) {
             values.add(PieEntry(set[type]!!.toFloat(), type))

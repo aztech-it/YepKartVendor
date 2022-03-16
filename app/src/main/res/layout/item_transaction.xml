@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/offset_10">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@+id/txtAmount"
+        android:layout_marginEnd="@dimen/offset_25"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtRemarks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Theme.YepKart.H6"/>
+
+        <TextView
+            android:id="@+id/txtTimeStamp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_10"
+            android:textColor="@color/colorHint"
+            style="@style/Theme.YepKart.T6"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:textSize="@dimen/text_t5"
+        style="@style/Theme.YepKart.Money"/>
+
+</RelativeLayout>

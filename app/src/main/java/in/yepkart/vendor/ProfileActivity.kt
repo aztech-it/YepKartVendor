@@ -91,7 +91,7 @@ class ProfileActivity : AppCompatActivity() {
         })
 
         txtPincode.setOnItemClickListener { adapterView, _, _, _ ->
-            var chip = Chip(this)
+            val chip = Chip(this)
 
             chip.text = adapterView.selectedItem.toString()
             chip.isCloseIconVisible = true

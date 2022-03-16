@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
+    android:id="@+id/wallet_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_action"
@@ -11,9 +11,10 @@
     tools:context=".WalletActivity">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="@id/container"
+        app:layout_constraintTop_toTopOf="@id/wallet_container"
         android:background="@android:color/transparent"
         android:fitsSystemWindows="true"
         app:elevation="@dimen/round_0">
@@ -29,5 +30,149 @@
             app:titleTextColor="@color/colorWhite"/>
 
     </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_150"
+            android:paddingVertical="@dimen/offset_10"
+            android:paddingHorizontal="@dimen/offset_15"
+            android:orientation="vertical">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/common_200"
+                android:layout_marginHorizontal="@dimen/offset_5"
+                android:layout_marginTop="@dimen/offset_5"
+                app:cardBackgroundColor="@color/colorAccent"
+                app:cardCornerRadius="@dimen/round_20"
+                app:cardElevation="@dimen/round_3">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/offset_20">
+
+                    <TextView
+                        android:id="@+id/txtBalance"
+                        style="@style/Theme.YepKart.Money"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentBottom="true"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <androidx.appcompat.widget.AppCompatImageButton
+                                android:id="@+id/btnAddMoney"
+                                android:layout_width="@dimen/common_50"
+                                android:layout_height="@dimen/common_50"
+                                android:layout_centerHorizontal="true"
+                                android:background="@drawable/bg_button_round"
+                                android:tint="@color/colorWhite"
+                                android:src="@drawable/ic_add_money"/>
+
+                            <TextView
+                                style="@style/Theme.YepKart.T6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/btnAddMoney"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="@dimen/offset_10"
+                                android:text="@string/title_add_money" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <androidx.appcompat.widget.AppCompatImageButton
+                                android:id="@+id/btnVoucher"
+                                android:layout_width="@dimen/common_50"
+                                android:layout_height="@dimen/common_50"
+                                android:layout_centerHorizontal="true"
+                                android:background="@drawable/bg_button_round"
+                                android:tint="@color/colorWhite"
+                                android:src="@drawable/ic_gift_voucher"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_below="@id/btnVoucher"
+                                android:layout_marginTop="@dimen/offset_10"
+                                android:text="@string/title_gift_voucher"
+                                style="@style/Theme.YepKart.T6"/>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <androidx.appcompat.widget.AppCompatImageButton
+                                android:id="@+id/btnSettings"
+                                android:layout_width="@dimen/common_50"
+                                android:layout_height="@dimen/common_50"
+                                android:layout_centerHorizontal="true"
+                                android:background="@drawable/bg_button_round"
+                                android:tint="@color/colorWhite"
+                                android:src="@drawable/ic_settings"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_below="@id/btnSettings"
+                                android:layout_marginTop="@dimen/offset_10"
+                                android:text="@string/title_settings"
+                                style="@style/Theme.YepKart.T6"/>
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/offset_20"
+                android:text="@string/heading_transaction_history"
+                style="@style/Theme.YepKart.H4"/>
+
+            <in.yepkart.vendor.controls.ExpandableHeightListView
+                android:id="@+id/listTransactions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/offset_20"
+                android:listSelector="@android:color/transparent"/>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
