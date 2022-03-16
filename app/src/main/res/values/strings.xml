@@ -19,5 +19,7 @@
     <string name="menu_about">About Us</string>
     <string name="menu_tour">Take a Tour</string>
 
-    <string name="title_earnings">EARNINGS</string>
+    <string name="title_earnings">EARNINGS (THIS WEEK)</string>
+    <string name="title_last_week">LAST WEEK</string>
+    <string name="title_current_week">THIS WEEK</string>
 </resources>

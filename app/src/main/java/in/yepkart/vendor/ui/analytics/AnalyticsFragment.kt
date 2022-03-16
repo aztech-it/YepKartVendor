@@ -9,20 +9,28 @@ import android.view.ViewGroup
 import `in`.yepkart.vendor.R
 import `in`.yepkart.vendor.controls.RoundedBarChart
 import `in`.yepkart.vendor.databinding.FragmentAnalyticsBinding
+import android.graphics.Color
 import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarEntry
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet
 import androidx.core.content.ContextCompat
+import com.github.mikephil.charting.charts.PieChart
 import com.github.mikephil.charting.components.XAxis
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
+import com.github.mikephil.charting.data.PieEntry
+import com.github.mikephil.charting.data.PieData
+
+import com.github.mikephil.charting.data.PieDataSet
 
 class AnalyticsFragment : Fragment() {
 
     private lateinit var analyticsViewModel: AnalyticsViewModel
     private var _binding: FragmentAnalyticsBinding? = null
-    private lateinit var barChart: RoundedBarChart
     private val binding get() = _binding!!
+
+    private lateinit var barChart: RoundedBarChart
+    private lateinit var pieChart: PieChart
 
     private val days = arrayOf("SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT")
 
@@ -31,6 +39,7 @@ class AnalyticsFragment : Fragment() {
         _binding = FragmentAnalyticsBinding.inflate(inflater, container, false)
 
         barChart = binding.root.findViewById(R.id.bar_chart)
+        pieChart = binding.root.findViewById(R.id.pie_chart)
 
         barChart.xAxis.setDrawGridLines(false)
         barChart.axisLeft.setDrawGridLines(false)
@@ -62,61 +71,91 @@ class AnalyticsFragment : Fragment() {
 
         barChart.extraBottomOffset = 5f
 
-        setData(7, 100f)
+        pieChart.legend.isEnabled = false
+        pieChart.description.isEnabled = false
+        pieChart.setHoleColor(ContextCompat.getColor(binding.root.context, R.color.colorAccentAlt));
+        pieChart.holeRadius = 30f
+        pieChart.isRotationEnabled = false
+
+        setBarData()
+        setPieData()
 
         barChart.barData.barWidth = 0.5f
 
         return binding.root
     }
 
-    private fun setData(count: Int, range: Float) {
-        val start = 0f
+    private fun setBarData() {
         val values: ArrayList<BarEntry> = ArrayList()
-        var i = start.toInt()
-        while (i < start + count) {
-            val value = (Math.random() * (range + 1)).toFloat()
 
-            if (Math.random() * 100 < 25) {
-                values.add(BarEntry(i.toFloat(), value, resources.getDrawable(R.drawable.ic_about)))
-            }
-            else {
-                values.add(BarEntry(i.toFloat(), value))
-            }
+        values.add(BarEntry(0f, 1129f))
+        values.add(BarEntry(1f, 890f))
+        values.add(BarEntry(2f, 1240f))
+        values.add(BarEntry(3f, 1062f))
+        values.add(BarEntry(4f, 644f))
+        values.add(BarEntry(5f, 1150f))
+        values.add(BarEntry(6f, 1360f))
 
-            i++
-        }
-
-        val set1: BarDataSet
+        val set: BarDataSet
 
         if (barChart.data != null && barChart.data.dataSetCount > 0) {
-            set1 = barChart.data.getDataSetByIndex(0) as BarDataSet
-            set1.values = values
+            set = barChart.data.getDataSetByIndex(0) as BarDataSet
+            set.values = values
 
-            val color1 = ContextCompat.getColor(binding.root.context, R.color.colorWhite)
-            val color2 = ContextCompat.getColor(binding.root.context, R.color.colorAccent)
-            set1.color = color1
-            set1.highLightColor = color2
+            val color1 = ContextCompat.getColor(binding.root.context, R.color.colorSuccessDark)
+            val color2 = ContextCompat.getColor(binding.root.context, R.color.colorSuccessDark)
+            set.color = color1
+            set.highLightColor = color2
 
             barChart.data.notifyDataChanged()
             barChart.notifyDataSetChanged()
         }
         else {
-            set1 = BarDataSet(values, "")
-            set1.setDrawIcons(false)
+            set = BarDataSet(values, "")
+            set.setDrawIcons(false)
 
-            val color1 = ContextCompat.getColor(binding.root.context, R.color.colorWhite)
-            val color2 = ContextCompat.getColor(binding.root.context, R.color.colorWarningDark)
-            set1.color = color1
-            set1.highLightColor = color2
+            val color1 = ContextCompat.getColor(binding.root.context, R.color.colorSuccessDark)
+            val color2 = ContextCompat.getColor(binding.root.context, R.color.colorSuccessDark)
+            set.color = color1
+            set.highLightColor = color2
 
             val dataSets: ArrayList<IBarDataSet> = ArrayList()
-            dataSets.add(set1)
+            dataSets.add(set)
             val data = BarData(dataSets)
             data.setDrawValues(false)
             data.setValueTextSize(10f)
             data.barWidth = 0.9f
             barChart.data = data
         }
+    }
+
+    private fun setPieData() {
+        val values: ArrayList<PieEntry> = ArrayList()
+
+        val set: MutableMap<String, Int> = HashMap()
+        set["NOVEMBER"] = 200
+        set["DECEMBER"] = 230
+        set["JANUARY"] = 100
+        set["FEBRUARY"] = 400
+
+        val colors: ArrayList<Int> = ArrayList()
+        colors.add(Color.parseColor("#CD982C"))
+        colors.add(Color.parseColor("#049BB9"))
+        colors.add(Color.parseColor("#5B919E"))
+        colors.add(Color.parseColor("#F9B400"))
+
+        for (type in set.keys) {
+            values.add(PieEntry(set[type]!!.toFloat(), type))
+        }
+
+        val pieDataSet = PieDataSet(values, "")
+        pieDataSet.colors = colors
+        val pieData = PieData(pieDataSet)
+        pieData.setDrawValues(true)
+        pieData.setValueTextSize(12f)
+
+        pieChart.data = pieData
+        pieChart.invalidate()
     }
 
     override fun onDestroyView() {

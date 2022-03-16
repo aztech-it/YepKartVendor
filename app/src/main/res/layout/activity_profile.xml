@@ -35,264 +35,301 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintTop_toBottomOf="@id/app_bar"
-        android:paddingTop="@dimen/common_250"
         android:layout_marginTop="?attr/actionBarSize">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_150"
+            android:paddingVertical="@dimen/offset_10"
+            android:paddingHorizontal="@dimen/offset_15"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tvPersonalDetails"
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/common_20"
-                android:text="Personal Details"
-                android:textSize="24sp"
-                android:textStyle="bold" />
+                android:layout_marginHorizontal="@dimen/offset_5"
+                android:layout_marginTop="@dimen/offset_5"
+                app:cardCornerRadius="@dimen/round_20"
+                app:cardElevation="@dimen/round_3">
 
-            <RelativeLayout
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="@dimen/offset_20"
+                    android:paddingVertical="@dimen/offset_30">
+
+                    <RelativeLayout
+                        android:layout_width="96dp"
+                        android:layout_height="96dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="@dimen/offset_60">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/profile_image"
+                            android:layout_width="84dp"
+                            android:layout_height="84dp"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/avatar" />
+
+                        <androidx.appcompat.widget.AppCompatImageButton
+                            android:layout_width="@dimen/common_32"
+                            android:layout_height="@dimen/common_32"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentEnd="true"
+                            android:background="@drawable/bg_button_cam"
+                            android:src="@drawable/ic_camera"/>
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="USER INFORMATION"
+                        android:textColor="@color/colorInfoDark"
+                        style="@style/Theme.YepKart.H4"/>
+
+                    <GridLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/offset_10"
+                        android:columnCount="2"
+                        android:rowCount="1"
+                        android:useDefaultMargins="false">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="@dimen/common_0"
+                            android:layout_height="wrap_content"
+                            android:layout_column="0"
+                            android:layout_row="0"
+                            android:layout_columnWeight="1"
+                            android:layout_marginEnd="@dimen/offset_5"
+                            android:hint="First Name"
+                            style="@style/Theme.YepKart.TextInputLayout">
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/txtFirstName"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:ems="1"
+                                android:imeOptions="actionNext"
+                                android:importantForAutofill="no"
+                                android:inputType="text|textCapWords|textNoSuggestions"
+                                android:lines="1"
+                                android:maxEms="1"
+                                android:maxLines="1"
+                                style="@style/Theme.YepKart.EditText"/>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="@dimen/common_0"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:layout_row="0"
+                            android:layout_columnWeight="1"
+                            android:layout_marginStart="@dimen/offset_5"
+                            android:hint="Last Name"
+                            style="@style/Theme.YepKart.TextInputLayout">
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/txtLastName"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:ems="1"
+                                android:imeOptions="actionNext"
+                                android:importantForAutofill="no"
+                                android:inputType="text|textCapWords|textNoSuggestions"
+                                android:lines="1"
+                                android:maxEms="1"
+                                android:maxLines="1"
+                                style="@style/Theme.YepKart.EditText"/>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </GridLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Email"
+                        style="@style/Theme.YepKart.TextInputLayout">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/txtEmail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="1"
+                            android:imeOptions="actionNext"
+                            android:importantForAutofill="no"
+                            android:inputType="textEmailAddress"
+                            android:lines="1"
+                            android:maxEms="1"
+                            android:maxLines="1"
+                            style="@style/Theme.YepKart.EditText"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <GridLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:columnCount="2"
+                        android:rowCount="1"
+                        android:useDefaultMargins="false">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="@dimen/common_0"
+                            android:layout_height="wrap_content"
+                            android:layout_column="0"
+                            android:layout_row="0"
+                            android:layout_columnWeight="1"
+                            android:layout_marginEnd="@dimen/offset_5"
+                            android:hint="Gender"
+                            style="@style/Theme.YepKart.TextInputLayout">
+
+                            <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                                android:id="@+id/txtGender"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:ems="1"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:imeOptions="actionNext"
+                                android:lines="1"
+                                android:maxEms="1"
+                                android:maxLines="1"
+                                android:paddingStart="@dimen/offset_0"
+                                android:paddingEnd="@dimen/offset_0"
+                                android:textCursorDrawable="@drawable/bg_cursor"
+                                android:textSize="@dimen/text_t5"
+                                style="@style/Widget.MaterialComponents.TextInputEditText.FilledBox"/>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="@dimen/common_0"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:layout_row="0"
+                            android:layout_columnWeight="1"
+                            android:layout_marginStart="@dimen/offset_5"
+                            android:hint="Mobile"
+                            style="@style/Theme.YepKart.TextInputLayout">
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/txtMobile"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:ems="1"
+                                android:imeOptions="actionNext"
+                                android:importantForAutofill="no"
+                                android:inputType="phone"
+                                android:lines="1"
+                                android:maxEms="1"
+                                android:maxLines="1"
+                                android:maxLength="10"
+                                style="@style/Theme.YepKart.EditText"/>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </GridLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Address"
+                        style="@style/Theme.YepKart.TextInputLayout">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/txtAddress"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="1"
+                            android:imeOptions="actionNext"
+                            android:inputType="text|textCapWords|textNoSuggestions"
+                            android:lines="1"
+                            android:maxEms="1"
+                            android:maxLines="1"
+                            style="@style/Theme.YepKart.EditText"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/common_20">
+                android:layout_marginHorizontal="@dimen/offset_5"
+                android:layout_marginTop="@dimen/offset_10"
+                android:layout_marginBottom="@dimen/offset_5"
+                app:cardCornerRadius="@dimen/round_20"
+                app:cardElevation="@dimen/round_3">
 
-                <TextView
-                    android:id="@+id/tvName"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/common_20"
-                    android:layout_marginEnd="@dimen/common_20"
-                    android:text="Name"
-                    android:textSize="18sp" />
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="@dimen/offset_20"
+                    android:paddingVertical="@dimen/offset_30">
 
-                <EditText
-                    android:id="@+id/etName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/common_20"
-                    android:layout_marginEnd="@dimen/common_20"
-                    android:hint="Name*"
-                    android:textSize="18sp"
-                    android:visibility="gone" />
-            </RelativeLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Service Pincodes"
+                        style="@style/Theme.YepKart.TextInputLayout">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/common_20">
+                        <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                            android:id="@+id/txtPincode"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="1"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:imeOptions="actionNext"
+                            android:lines="1"
+                            android:maxEms="1"
+                            android:maxLines="1"
+                            android:paddingStart="@dimen/offset_0"
+                            android:paddingEnd="@dimen/offset_0"
+                            android:textCursorDrawable="@drawable/bg_cursor"
+                            android:textSize="@dimen/text_t5"
+                            style="@style/Widget.MaterialComponents.TextInputEditText.FilledBox"/>
 
-                <TextView
-                    android:id="@+id/tvMobile"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/common_20"
-                    android:layout_marginEnd="@dimen/common_20"
-                    android:text="Mobile"
-                    android:textSize="18sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
 
-                <EditText
-                    android:id="@+id/etMobile"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/common_20"
-                    android:layout_marginEnd="@dimen/common_20"
-                    android:hint="Email*"
-                    android:textSize="18sp"
-                    android:visibility="gone" />
-            </RelativeLayout>
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/groupPincode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/common_20">
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Services"
+                        style="@style/Theme.YepKart.TextInputLayout">
 
-                <TextView
-                    android:id="@+id/tvEmail"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/common_20"
-                    android:layout_marginEnd="@dimen/common_20"
-                    android:text="Email"
-                    android:textSize="18sp" />
+                        <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                            android:id="@+id/txtService"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="1"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:imeOptions="actionDone"
+                            android:lines="1"
+                            android:maxEms="1"
+                            android:maxLines="1"
+                            android:paddingStart="@dimen/offset_0"
+                            android:paddingEnd="@dimen/offset_0"
+                            android:textCursorDrawable="@drawable/bg_cursor"
+                            android:textSize="@dimen/text_t5"
+                            style="@style/Widget.MaterialComponents.TextInputEditText.FilledBox"/>
 
-                <EditText
-                    android:id="@+id/etEmail"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/common_20"
-                    android:layout_marginEnd="@dimen/common_20"
-                    android:hint="Email*"
-                    android:textSize="18sp"
-                    android:visibility="gone" />
-            </RelativeLayout>
+                    </com.google.android.material.textfield.TextInputLayout>
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/common_20">
+                </LinearLayout>
 
-                <TextView
-                    android:id="@+id/tvAddress"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/common_20"
-                    android:layout_marginEnd="@dimen/common_20"
-                    android:text="Address"
-                    android:textSize="18sp" />
-
-                <EditText
-                    android:id="@+id/etAddress"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/common_20"
-                    android:layout_marginEnd="@dimen/common_20"
-                    android:hint="Address*"
-                    android:textSize="18sp"
-                    android:visibility="gone" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/common_20">
-
-                <ImageView
-                    android:id="@+id/imgID"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/common_20">
-
-                <ImageView
-                    android:id="@+id/imgAddress"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-            </RelativeLayout>
-
-            <TextView
-                android:id="@+id/tvBankDetails"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/common_20"
-                android:text="Bank Details"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/common_20">
-
-                <TextView
-                    android:id="@+id/tvBankName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/common_20"
-                    android:layout_marginEnd="@dimen/common_20"
-                    android:text="Bank Name"
-                    android:textSize="18sp" />
-
-                <EditText
-                    android:id="@+id/etBankName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/common_20"
-                    android:layout_marginEnd="@dimen/common_20"
-                    android:hint="Bank Name*"
-                    android:textSize="18sp"
-                    android:visibility="gone" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/common_20">
-
-                <TextView
-                    android:id="@+id/tvBranchName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/common_20"
-                    android:layout_marginEnd="@dimen/common_20"
-                    android:text="Branch Name"
-                    android:textSize="18sp" />
-
-                <EditText
-                    android:id="@+id/etBranchName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/common_20"
-                    android:layout_marginEnd="@dimen/common_20"
-                    android:hint="Branch Name*"
-                    android:textSize="18sp"
-                    android:visibility="gone" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/common_20">
-
-                <TextView
-                    android:id="@+id/tvAccountNumber"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/common_20"
-                    android:layout_marginEnd="@dimen/common_20"
-                    android:text="Account Number"
-                    android:textSize="18sp" />
-
-                <EditText
-                    android:id="@+id/etAccountNumber"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/common_20"
-                    android:layout_marginEnd="@dimen/common_20"
-                    android:hint="Account Number*"
-                    android:textSize="18sp"
-                    android:visibility="gone" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/common_20">
-
-                <TextView
-                    android:id="@+id/tvIFSC"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/common_20"
-                    android:layout_marginEnd="@dimen/common_20"
-                    android:text="IFSC Code"
-                    android:textSize="18sp" />
-
-                <EditText
-                    android:id="@+id/etIFSC"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/common_20"
-                    android:layout_marginEnd="@dimen/common_20"
-                    android:hint="IFSC Code*"
-                    android:textSize="18sp"
-                    android:visibility="gone" />
-            </RelativeLayout>
-
-            <TextView
-                android:id="@+id/tvServiceDetails"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/common_20"
-                android:layout_marginTop="@dimen/common_20"
-                android:text="Service Details"
-                android:textSize="24sp"
-                android:textStyle="bold" />
+            </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>
 

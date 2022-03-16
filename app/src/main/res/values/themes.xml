@@ -71,4 +71,37 @@
         <item name="android:textSize">@dimen/text_h6</item>
     </style>
 
+    <style name="Theme.YepKart.B">
+        <item name="android:fontFamily">@font/montserrat_semibold</item>
+    </style>
+
+    <style name="Theme.YepKart.Span">
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+    </style>
+
+    <style name="Theme.YepKart.Money">
+        <item name="android:fontFamily">@font/varela_round</item>
+        <item name="android:textSize">@dimen/text_t1</item>
+    </style>
+
+    <style name="Theme.YepKart.Hint">
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:textSize">@dimen/text_t5</item>
+    </style>
+
+    <style name="Theme.YepKart.TextInputLayout">
+        <item name="boxBackgroundColor">@color/colorWhite</item>
+        <item name="boxStrokeColor">@color/colorInfoDark</item>
+        <item name="hintTextColor">@color/colorInfoDark</item>
+        <item name="hintTextAppearance">@style/Theme.YepKart.Hint</item>
+    </style>
+
+    <style name="Theme.YepKart.EditText">
+        <item name="android:paddingStart">@dimen/offset_0</item>
+        <item name="android:paddingEnd">@dimen/offset_0</item>
+        <item name="android:textCursorDrawable">@drawable/bg_cursor</item>
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:textSize">@dimen/text_t5</item>
+    </style>
+
 </resources>

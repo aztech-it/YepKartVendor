@@ -10,7 +10,7 @@
     <color name="colorDark">#FF282D33</color>
     <color name="colorDisable">#FF999999</color>
     <color name="colorBackground">#FFEFEFEF</color>
-    <color name="colorAccentAlt">#FFADD5DB</color>
+    <color name="colorAccentAlt">#ddf2f6</color>
 
     <!-- COMMON COLORS -->
     <color name="colorMuted">#FFE9E9E9</color>

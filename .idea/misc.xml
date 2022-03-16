@@ -5,12 +5,17 @@
       <map>
         <entry key="..\:/Aztech/Android/YepKartVendor/app/src/main/res/drawable/bg_action_bar.xml" value="0.37864583333333335" />
         <entry key="..\:/Aztech/Android/YepKartVendor/app/src/main/res/drawable/bg_app_bar.xml" value="0.37864583333333335" />
+        <entry key="..\:/Aztech/Android/YepKartVendor/app/src/main/res/drawable/bg_button_cam.xml" value="0.37864583333333335" />
+        <entry key="..\:/Aztech/Android/YepKartVendor/app/src/main/res/drawable/bg_cursor.xml" value="0.37864583333333335" />
         <entry key="..\:/Aztech/Android/YepKartVendor/app/src/main/res/drawable/bg_dashboard.xml" value="0.37864583333333335" />
         <entry key="..\:/Aztech/Android/YepKartVendor/app/src/main/res/drawable/bg_login.xml" value="0.37864583333333335" />
         <entry key="..\:/Aztech/Android/YepKartVendor/app/src/main/res/drawable/bg_splash.xml" value="0.37864583333333335" />
         <entry key="..\:/Aztech/Android/YepKartVendor/app/src/main/res/drawable/ic_about.xml" value="0.37864583333333335" />
         <entry key="..\:/Aztech/Android/YepKartVendor/app/src/main/res/drawable/ic_back.xml" value="0.37864583333333335" />
         <entry key="..\:/Aztech/Android/YepKartVendor/app/src/main/res/drawable/ic_bg_splash.xml" value="0.37864583333333335" />
+        <entry key="..\:/Aztech/Android/YepKartVendor/app/src/main/res/drawable/ic_camera.xml" value="0.37864583333333335" />
+        <entry key="..\:/Aztech/Android/YepKartVendor/app/src/main/res/drawable/ic_fall.xml" value="0.37864583333333335" />
+        <entry key="..\:/Aztech/Android/YepKartVendor/app/src/main/res/drawable/ic_grow.xml" value="0.37864583333333335" />
         <entry key="..\:/Aztech/Android/YepKartVendor/app/src/main/res/drawable/ic_hamburger.xml" value="0.37864583333333335" />
         <entry key="..\:/Aztech/Android/YepKartVendor/app/src/main/res/drawable/ic_home.xml" value="0.37864583333333335" />
         <entry key="..\:/Aztech/Android/YepKartVendor/app/src/main/res/drawable/ic_notification.xml" value="0.37864583333333335" />
@@ -20,7 +25,7 @@
         <entry key="..\:/Aztech/Android/YepKartVendor/app/src/main/res/layout/activity_legal.xml" value="0.3625" />
         <entry key="..\:/Aztech/Android/YepKartVendor/app/src/main/res/layout/activity_main.xml" value="0.3625" />
         <entry key="..\:/Aztech/Android/YepKartVendor/app/src/main/res/layout/activity_payment.xml" value="0.3625" />
-        <entry key="..\:/Aztech/Android/YepKartVendor/app/src/main/res/layout/activity_profile.xml" value="0.3625" />
+        <entry key="..\:/Aztech/Android/YepKartVendor/app/src/main/res/layout/activity_profile.xml" value="0.33" />
         <entry key="..\:/Aztech/Android/YepKartVendor/app/src/main/res/layout/activity_task.xml" value="0.3625" />
         <entry key="..\:/Aztech/Android/YepKartVendor/app/src/main/res/layout/activity_tour.xml" value="0.3625" />
         <entry key="..\:/Aztech/Android/YepKartVendor/app/src/main/res/layout/activity_wallet.xml" value="0.3625" />
@@ -29,7 +34,10 @@
         <entry key="..\:/Aztech/Android/YepKartVendor/app/src/main/res/layout/fragment_analytics.xml" value="0.3625" />
         <entry key="..\:/Aztech/Android/YepKartVendor/app/src/main/res/layout/fragment_gallery.xml" value="0.3625" />
         <entry key="..\:/Aztech/Android/YepKartVendor/app/src/main/res/layout/fragment_home.xml" value="0.3625" />
+        <entry key="..\:/Aztech/Android/YepKartVendor/app/src/main/res/layout/item_auto_complete.xml" value="0.3625" />
         <entry key="..\:/Aztech/Android/YepKartVendor/app/src/main/res/layout/nav_header_main.xml" value="0.3625" />
+        <entry key="..\:/Aztech/Android/YepKartVendor/app/src/main/res/layout/row_content.xml" value="0.3625" />
+        <entry key="..\:/Aztech/Android/YepKartVendor/app/src/main/res/layout/row_title.xml" value="0.3625" />
         <entry key="..\:/Aztech/Android/YepKartVendor/app/src/main/res/menu/activity_main_bottom.xml" value="0.3625" />
         <entry key="..\:/Aztech/Android/YepKartVendor/app/src/main/res/menu/activity_main_drawer.xml" value="0.33" />
         <entry key="..\:/Aztech/Android/YepKartVendor/app/src/main/res/menu/main.xml" value="0.3625" />
