@@ -5,6 +5,8 @@ import `in`.yepkart.vendor.R
 import `in`.yepkart.vendor.enums.TransactionType
 import android.annotation.SuppressLint
 import android.content.Context
+import android.os.Build
+import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -36,7 +38,13 @@ class TransactionAdapter(private var mContext: Context, private var transactionL
 
         txtRemarks.text = transactionItem.remarks
         txtTimeStamp.text = transactionItem.timeStamp
-        txtAmount.text = transactionItem.amount
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            txtAmount.text = Html.fromHtml(transactionItem.amount, Html.FROM_HTML_MODE_LEGACY)
+        }
+        else {
+            txtAmount.text = Html.fromHtml(transactionItem.amount)
+        }
 
         when(transactionItem.type) {
             TransactionType.CREDIT -> txtAmount.setTextColor(mContext.getColor(R.color.colorSuccessDark))

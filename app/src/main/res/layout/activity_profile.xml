@@ -50,6 +50,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/offset_5"
                 android:layout_marginTop="@dimen/offset_5"
+                app:cardBackgroundColor="@color/colorAccentAlt"
                 app:cardCornerRadius="@dimen/round_20"
                 app:cardElevation="@dimen/round_3">
 
@@ -71,15 +72,16 @@
                             android:layout_width="84dp"
                             android:layout_height="84dp"
                             android:layout_centerInParent="true"
-                            android:src="@drawable/avatar" />
+                            android:src="@drawable/ic_avatar_male"
+                            app:civ_circle_background_color="@color/colorSecondaryAccent" />
 
                         <androidx.appcompat.widget.AppCompatImageButton
                             android:layout_width="@dimen/common_32"
                             android:layout_height="@dimen/common_32"
-                            android:layout_alignParentBottom="true"
                             android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
                             android:background="@drawable/bg_button_cam"
-                            android:src="@drawable/ic_camera"/>
+                            android:src="@drawable/ic_camera" />
 
                     </RelativeLayout>
 
@@ -246,6 +248,7 @@
                             android:layout_height="wrap_content"
                             android:ems="1"
                             android:imeOptions="actionNext"
+                            android:importantForAutofill="no"
                             android:inputType="text|textCapWords|textNoSuggestions"
                             android:lines="1"
                             android:maxEms="1"
@@ -253,6 +256,14 @@
                             style="@style/Theme.YepKart.EditText"/>
 
                     </com.google.android.material.textfield.TextInputLayout>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="@dimen/common_100"
+                        android:layout_height="@dimen/common_40"
+                        android:layout_marginTop="@dimen/offset_30"
+                        android:layout_gravity="center_horizontal"
+                        android:text="SAVE"
+                        style="@style/Theme.YepKart.Button"/>
 
                 </LinearLayout>
 
@@ -264,6 +275,7 @@
                 android:layout_marginHorizontal="@dimen/offset_5"
                 android:layout_marginTop="@dimen/offset_10"
                 android:layout_marginBottom="@dimen/offset_5"
+                app:cardBackgroundColor="@color/colorAccentAlt"
                 app:cardCornerRadius="@dimen/round_20"
                 app:cardElevation="@dimen/round_3">
 
@@ -274,9 +286,17 @@
                     android:paddingHorizontal="@dimen/offset_20"
                     android:paddingVertical="@dimen/offset_30">
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SERVICE INFORMATION"
+                        android:textColor="@color/colorInfoDark"
+                        style="@style/Theme.YepKart.H4"/>
+
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/offset_10"
                         android:hint="Service Pincodes"
                         style="@style/Theme.YepKart.TextInputLayout">
 
@@ -287,6 +307,7 @@
                             android:ems="1"
                             android:fontFamily="@font/montserrat_medium"
                             android:imeOptions="actionNext"
+                            android:inputType="number"
                             android:lines="1"
                             android:maxEms="1"
                             android:maxLines="1"
@@ -326,6 +347,242 @@
                             style="@style/Widget.MaterialComponents.TextInputEditText.FilledBox"/>
 
                     </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/groupService"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="@dimen/common_100"
+                        android:layout_height="@dimen/common_40"
+                        android:layout_marginTop="@dimen/offset_30"
+                        android:layout_gravity="center_horizontal"
+                        android:text="SAVE"
+                        style="@style/Theme.YepKart.Button"/>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/offset_5"
+                android:layout_marginTop="@dimen/offset_10"
+                android:layout_marginBottom="@dimen/offset_5"
+                app:cardBackgroundColor="@color/colorAccentAlt"
+                app:cardCornerRadius="@dimen/round_20"
+                app:cardElevation="@dimen/round_3">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="@dimen/offset_20"
+                    android:paddingVertical="@dimen/offset_30">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="KYC DETAILS"
+                        android:textColor="@color/colorInfoDark"
+                        style="@style/Theme.YepKart.H4"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/offset_10"
+                        android:hint="PAN Card Number"
+                        style="@style/Theme.YepKart.TextInputLayout">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/txtPanNo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="1"
+                            android:enabled="false"
+                            android:imeOptions="actionNext"
+                            android:importantForAutofill="no"
+                            android:inputType="textEmailAddress"
+                            android:lines="1"
+                            android:maxEms="1"
+                            android:maxLines="1"
+                            style="@style/Theme.YepKart.EditText"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Name on PAN Card"
+                        style="@style/Theme.YepKart.TextInputLayout">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/txtPanName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="1"
+                            android:enabled="false"
+                            android:imeOptions="actionNext"
+                            android:importantForAutofill="no"
+                            android:inputType="textEmailAddress"
+                            android:lines="1"
+                            android:maxEms="1"
+                            android:maxLines="1"
+                            style="@style/Theme.YepKart.EditText"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="DOB on PAN Card"
+                        style="@style/Theme.YepKart.TextInputLayout">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/txtPanDob"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="1"
+                            android:enabled="false"
+                            android:imeOptions="actionNext"
+                            android:importantForAutofill="no"
+                            android:inputType="textEmailAddress"
+                            android:lines="1"
+                            android:maxEms="1"
+                            android:maxLines="1"
+                            style="@style/Theme.YepKart.EditText"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/offset_5"
+                        android:layout_marginTop="@dimen/offset_15"
+                        android:text="PAN Card Front"
+                        style="@style/Theme.YepKart.T5"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="@dimen/common_175"
+                        android:layout_height="@dimen/common_100"
+                        android:layout_marginHorizontal="@dimen/offset_5"
+                        android:layout_marginTop="@dimen/offset_10"
+                        android:layout_marginBottom="@dimen/offset_5"
+                        app:cardCornerRadius="@dimen/round_10"
+                        app:cardElevation="@dimen/round_1">
+
+                        <ImageView
+                            android:id="@+id/imgPanCard"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/img_cam_scan"/>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/offset_20"
+                        android:hint="Aadhar Card Number"
+                        style="@style/Theme.YepKart.TextInputLayout">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/txtAadharNo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="1"
+                            android:enabled="false"
+                            android:imeOptions="actionNext"
+                            android:importantForAutofill="no"
+                            android:inputType="textEmailAddress"
+                            android:lines="1"
+                            android:maxEms="1"
+                            android:maxLines="1"
+                            style="@style/Theme.YepKart.EditText"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Address on Aadhar Card"
+                        style="@style/Theme.YepKart.TextInputLayout">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/txtAadharAddress"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="1"
+                            android:enabled="false"
+                            android:imeOptions="actionNext"
+                            android:importantForAutofill="no"
+                            android:inputType="text|textCapWords|textNoSuggestions"
+                            android:lines="1"
+                            android:maxEms="1"
+                            android:maxLines="1"
+                            style="@style/Theme.YepKart.EditText"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/offset_5"
+                        android:layout_marginTop="@dimen/offset_10"
+                        android:text="Aadhar Card Front"
+                        style="@style/Theme.YepKart.T5"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="@dimen/common_175"
+                        android:layout_height="@dimen/common_100"
+                        android:layout_marginHorizontal="@dimen/offset_5"
+                        android:layout_marginTop="@dimen/offset_10"
+                        android:layout_marginBottom="@dimen/offset_5"
+                        app:cardCornerRadius="@dimen/round_10"
+                        app:cardElevation="@dimen/round_1">
+
+                        <ImageView
+                            android:id="@+id/imgAadharFront"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/img_cam_scan"/>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/offset_5"
+                        android:layout_marginTop="@dimen/offset_10"
+                        android:text="Aadhar Card Back"
+                        style="@style/Theme.YepKart.T5"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="@dimen/common_175"
+                        android:layout_height="@dimen/common_100"
+                        android:layout_marginHorizontal="@dimen/offset_5"
+                        android:layout_marginTop="@dimen/offset_10"
+                        android:layout_marginBottom="@dimen/offset_5"
+                        app:cardCornerRadius="@dimen/round_10"
+                        app:cardElevation="@dimen/round_1">
+
+                        <ImageView
+                            android:id="@+id/imgAadharBack"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/img_cam_scan"/>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="@dimen/common_100"
+                        android:layout_height="@dimen/common_40"
+                        android:layout_marginTop="@dimen/offset_30"
+                        android:layout_gravity="center_horizontal"
+                        android:text="SAVE"
+                        style="@style/Theme.YepKart.Button"/>
 
                 </LinearLayout>
 

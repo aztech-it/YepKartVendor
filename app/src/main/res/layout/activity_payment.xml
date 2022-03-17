@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
+    android:id="@+id/payment_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_action"
@@ -13,7 +13,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="@id/container"
+        app:layout_constraintTop_toTopOf="@id/payment_container"
         android:background="@android:color/transparent"
         android:fitsSystemWindows="true"
         app:elevation="@dimen/round_0">
@@ -29,5 +29,253 @@
             app:titleTextColor="@color/colorWhite"/>
 
     </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_150"
+            android:paddingVertical="@dimen/offset_10"
+            android:paddingHorizontal="@dimen/offset_15"
+            android:orientation="vertical">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/common_200"
+                android:layout_marginHorizontal="@dimen/offset_5"
+                android:layout_marginTop="@dimen/offset_5"
+                app:cardBackgroundColor="@android:color/transparent"
+                app:cardCornerRadius="@dimen/round_20"
+                app:cardElevation="@dimen/round_3">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_card"
+                    android:padding="@dimen/offset_20"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtBankName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="@dimen/offset_15"
+                        android:text="Bank of Baroda"
+                        app:drawableStartCompat="@drawable/ic_bank"
+                        style="@style/Theme.YepKart.T2"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/offset_30">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toStartOf="@+id/container_button"
+                            android:layout_marginEnd="@dimen/offset_20"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="ABHRAJIT KUNDU"
+                                style="@style/Theme.YepKart.H5"/>
+
+                            <TextView
+                                android:id="@+id/txtAccountNo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/offset_10"
+                                android:text="*********09389"
+                                style="@style/Theme.YepKart.H5"/>
+
+                            <TextView
+                                android:id="@+id/txtIfscCode"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/offset_10"
+                                android:text="BARB0RANAGH"
+                                style="@style/Theme.YepKart.H5"/>
+
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/container_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true">
+
+                            <androidx.appcompat.widget.AppCompatImageButton
+                                android:id="@+id/btnChange"
+                                android:layout_width="@dimen/common_50"
+                                android:layout_height="@dimen/common_50"
+                                android:layout_centerHorizontal="true"
+                                android:background="@drawable/bg_button_round"
+                                android:src="@drawable/ic_send"
+                                android:tint="@color/colorWhite" />
+
+                            <TextView
+                                style="@style/Theme.YepKart.T6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/btnChange"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="@dimen/offset_10"
+                                android:text="@string/title_change_account" />
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/offset_5"
+                android:layout_marginTop="@dimen/offset_10"
+                android:columnCount="2"
+                android:rowCount="1"
+                android:useDefaultMargins="true">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="@dimen/common_0"
+                    android:layout_height="@dimen/common_150"
+                    android:layout_column="0"
+                    android:layout_row="0"
+                    android:layout_columnWeight="1"
+                    app:cardBackgroundColor="@color/colorAccentAlt"
+                    app:cardCornerRadius="@dimen/round_10"
+                    app:cardElevation="@dimen/round_3">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/offset_10">
+
+                        <ImageView
+                            android:layout_width="@dimen/common_28"
+                            android:layout_height="@dimen/common_28"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:contentDescription="@string/title_received_amount"
+                            android:src="@drawable/ic_bank"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginStart="@dimen/offset_10"
+                            android:layout_marginBottom="@dimen/offset_10"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtReceivedAmount"
+                                style="@style/Theme.YepKart.Money"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/offset_5"
+                                android:text="36,342"
+                                android:textSize="@dimen/text_t2"/>
+
+                            <TextView
+                                style="@style/Theme.YepKart.H6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/title_received_amount"
+                                android:textColor="@color/colorHint"/>
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="@dimen/common_0"
+                    android:layout_height="@dimen/common_150"
+                    android:layout_column="1"
+                    android:layout_row="0"
+                    android:layout_columnWeight="1"
+                    app:cardBackgroundColor="@color/colorAccentAlt"
+                    app:cardCornerRadius="@dimen/round_10"
+                    app:cardElevation="@dimen/round_3">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/offset_10">
+
+                        <ImageView
+                            android:layout_width="@dimen/common_28"
+                            android:layout_height="@dimen/common_28"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:contentDescription="@string/title_pending_amount"
+                            android:src="@drawable/ic_pending"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginStart="@dimen/offset_10"
+                            android:layout_marginBottom="@dimen/offset_10"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtPendingAmount"
+                                style="@style/Theme.YepKart.Money"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/offset_5"
+                                android:text="15,292"
+                                android:textSize="@dimen/text_t2"/>
+
+                            <TextView
+                                style="@style/Theme.YepKart.H6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/title_pending_amount"
+                                android:textColor="@color/colorHint"/>
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </GridLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/offset_5"
+                android:layout_marginTop="@dimen/offset_40"
+                android:text="@string/heading_transaction_statement"
+                style="@style/Theme.YepKart.H4"/>
+
+            <in.yepkart.vendor.controls.ExpandableHeightListView
+                android:id="@+id/listTransactions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/offset_5"
+                android:layout_marginTop="@dimen/offset_20"
+                android:listSelector="@android:color/transparent"/>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

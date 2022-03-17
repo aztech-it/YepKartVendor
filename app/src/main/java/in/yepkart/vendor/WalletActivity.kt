@@ -5,8 +5,10 @@ import `in`.yepkart.vendor.controls.ExpandableHeightListView
 import `in`.yepkart.vendor.enums.TransactionType
 import `in`.yepkart.vendor.models.TransactionItem
 import android.graphics.Color
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Html
 import android.view.MenuItem
 import android.view.View
 import android.view.WindowManager
@@ -44,20 +46,25 @@ class WalletActivity : AppCompatActivity() {
 
         transactionList = ArrayList()
 
-        (transactionList as ArrayList<TransactionItem>).add(TransactionItem("Money sent to YepKart Admin", "08 March, 2022 12:40 PM", "₹ 2,400", TransactionType.DEBIT))
-        (transactionList as ArrayList<TransactionItem>).add(TransactionItem("Money added to Wallet", "07 March, 2022 9:52 PM", "₹ 2,500", TransactionType.CREDIT))
-        (transactionList as ArrayList<TransactionItem>).add(TransactionItem("Gift Voucher xxxxxL899 redeemed", "26 February, 2022 4:32 PM", "₹ 20", TransactionType.CREDIT))
-        (transactionList as ArrayList<TransactionItem>).add(TransactionItem("Money sent to YepKart Admin", "11 February, 2022 11:02 AM", "₹ 1,999", TransactionType.DEBIT))
-        (transactionList as ArrayList<TransactionItem>).add(TransactionItem("Money added to Wallet", "11 February, 2022 10:48 AM", "₹ 750", TransactionType.CREDIT))
-        (transactionList as ArrayList<TransactionItem>).add(TransactionItem("Money added to Wallet", "08 February, 2022 7:17 PM", "₹ 1,500", TransactionType.CREDIT))
-        (transactionList as ArrayList<TransactionItem>).add(TransactionItem("Gift Voucher xxxxxC254 redeemed", "26 January, 2022 6:12 PM", "₹ 12", TransactionType.CREDIT))
-        (transactionList as ArrayList<TransactionItem>).add(TransactionItem("Joining Bonus added", "25 January, 2022 2:44 PM", "₹ 100", TransactionType.CREDIT))
+        (transactionList as ArrayList<TransactionItem>).add(TransactionItem("Money sent to YepKart Admin", "08 March, 2022 12:40 PM", "<b><small>₹</small>2,400</b>", TransactionType.DEBIT))
+        (transactionList as ArrayList<TransactionItem>).add(TransactionItem("Money added to Wallet", "07 March, 2022 9:52 PM", "<b><small>₹</small>2,500</b>", TransactionType.CREDIT))
+        (transactionList as ArrayList<TransactionItem>).add(TransactionItem("Gift Voucher xxxxxL899 redeemed", "26 February, 2022 4:32 PM", "<b><small>₹</small>20</b>", TransactionType.CREDIT))
+        (transactionList as ArrayList<TransactionItem>).add(TransactionItem("Money sent to YepKart Admin", "11 February, 2022 11:02 AM", "<b><small>₹</small>1,999</b>", TransactionType.DEBIT))
+        (transactionList as ArrayList<TransactionItem>).add(TransactionItem("Money added to Wallet", "11 February, 2022 10:48 AM", "<b><small>₹</small>750</b>", TransactionType.CREDIT))
+        (transactionList as ArrayList<TransactionItem>).add(TransactionItem("Money added to Wallet", "08 February, 2022 7:17 PM", "<b><small>₹</small>1,500</b>", TransactionType.CREDIT))
+        (transactionList as ArrayList<TransactionItem>).add(TransactionItem("Gift Voucher xxxxxC254 redeemed", "26 January, 2022 6:12 PM", "<b><small>₹</small>12</b>", TransactionType.CREDIT))
+        (transactionList as ArrayList<TransactionItem>).add(TransactionItem("Joining Bonus added", "25 January, 2022 2:44 PM", "<b><small>₹</small>100</b>", TransactionType.CREDIT))
 
         val transactionAdapter = TransactionAdapter(this, transactionList)
         listTransactions.adapter = transactionAdapter
         listTransactions.isExpanded = true
 
-        txtBalance.text = "₹ 483"
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            txtBalance.text = Html.fromHtml("<small>₹</small>483", Html.FROM_HTML_MODE_LEGACY)
+        }
+        else {
+            txtBalance.text = Html.fromHtml("<small>₹</small>483")
+        }
     }
 
     override fun onBackPressed() {

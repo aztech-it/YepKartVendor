@@ -10,19 +10,20 @@
     android:padding="@dimen/offset_20"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image"
+        android:layout_width="84dp"
+        android:layout_height="84dp"
         android:layout_marginBottom="@dimen/offset_15"
         android:contentDescription="@string/nav_header_desc"
-        app:srcCompat="@drawable/avatar"/>
+        android:src="@drawable/ic_avatar_male"
+        app:civ_circle_background_color="@color/colorSecondaryAccent"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/offset_5"
-        android:text="@string/nav_header_title"
+        android:text="Abhrajit Kundu"
         android:textAlignment="center"
         android:textColor="@color/colorText"/>
 
@@ -30,7 +31,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/nav_header_subtitle"
+        android:text="+91 700 194 4712"
         android:textAlignment="center"
         android:textColor="@color/colorText"/>
 
