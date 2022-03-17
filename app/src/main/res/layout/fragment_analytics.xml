@@ -36,7 +36,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:padding="@dimen/offset_20"
-                    android:text="@string/title_earnings" />
+                    android:text="@string/title_earnings"/>
 
                 <LinearLayout
                     android:id="@+id/layout_revenue"
@@ -165,7 +165,7 @@
                         android:layout_alignParentTop="true"
                         android:layout_alignParentEnd="true"
                         android:contentDescription="@string/title_jobs_done"
-                        android:src="@drawable/ic_task"/>
+                        android:src="@drawable/ic_task" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"

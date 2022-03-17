@@ -1,35 +1,205 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout 
+<androidx.core.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/home_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:scrollbars="none"
     tools:context=".ui.home.HomeFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="@id/home_container"
-        android:paddingVertical="@dimen/offset_15"
-        android:paddingHorizontal="@dimen/offset_20"
+        android:layout_marginTop="@dimen/common_150"
+        android:paddingVertical="@dimen/offset_10"
+        android:paddingHorizontal="@dimen/offset_15"
         android:orientation="vertical">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/offset_5"
+            android:columnCount="2"
+            android:rowCount="1"
+            android:useDefaultMargins="true">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="@dimen/common_0"
+                android:layout_height="@dimen/common_150"
+                android:layout_column="0"
+                android:layout_row="0"
+                android:layout_columnWeight="1"
+                app:cardBackgroundColor="@color/colorAccentAlt"
+                app:cardCornerRadius="@dimen/round_10"
+                app:cardElevation="@dimen/round_3">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/offset_10">
+
+                    <ImageView
+                        android:layout_width="@dimen/common_28"
+                        android:layout_height="@dimen/common_28"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:contentDescription="@string/title_jobs_done"
+                        android:src="@drawable/ic_task" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="@dimen/offset_10"
+                        android:layout_marginBottom="@dimen/offset_10"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txtTotalJobs"
+                            style="@style/Theme.YepKart.Money"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/offset_5"
+                            android:text="2"
+                            android:textSize="@dimen/text_t2"/>
+
+                        <TextView
+                            style="@style/Theme.YepKart.H6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/title_jobs_upcoming"
+                            android:textColor="@color/colorHint"/>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="@dimen/common_0"
+                android:layout_height="@dimen/common_150"
+                android:layout_column="1"
+                android:layout_row="0"
+                android:layout_columnWeight="1"
+                app:cardBackgroundColor="@color/colorAccentAlt"
+                app:cardCornerRadius="@dimen/round_10"
+                app:cardElevation="@dimen/round_3">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/offset_10">
+
+                    <ImageView
+                        android:layout_width="@dimen/common_28"
+                        android:layout_height="@dimen/common_28"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:contentDescription="@string/title_pending_amount"
+                        android:src="@drawable/ic_pending"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="@dimen/offset_10"
+                        android:layout_marginBottom="@dimen/offset_10"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txtPendingAmount"
+                            style="@style/Theme.YepKart.Money"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/offset_5"
+                            android:text="3,625"
+                            android:textSize="@dimen/text_t2"/>
+
+                        <TextView
+                            style="@style/Theme.YepKart.H6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/title_pending_amount"
+                            android:textColor="@color/colorHint"/>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </GridLayout>
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
-            android:layout_height="@dimen/common_200"
-            app:cardBackgroundColor="@color/colorAccent"
-            app:cardCornerRadius="@dimen/round_20">
+            android:layout_height="@dimen/common_450"
+            android:layout_marginHorizontal="@dimen/offset_10"
+            android:layout_marginTop="@dimen/offset_10"
+            app:cardBackgroundColor="@color/colorAccentAlt"
+            app:cardCornerRadius="@dimen/round_10"
+            app:cardElevation="@dimen/round_3">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:text="@string/menu_home"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txtUpcomingHeading"
+                    style="@style/Theme.YepKart.H6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:padding="@dimen/offset_20"
+                    android:text="@string/title_incoming_jobs"/>
+
+                <!--<in.yepkart.vendor.controls.ExpandableHeightListView
+                    android:id="@+id/listUpcoming"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtUpcomingHeading"
+                    android:layout_marginTop="@dimen/offset_10"/>-->
+
+                <include
+                    layout="@layout/item_job"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtUpcomingHeading"/>
+
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_450"
+            android:layout_marginHorizontal="@dimen/offset_10"
+            android:layout_marginTop="@dimen/offset_10"
+            android:layout_marginBottom="@dimen/offset_100"
+            app:cardBackgroundColor="@color/colorAccentAlt"
+            app:cardCornerRadius="@dimen/round_10"
+            app:cardElevation="@dimen/round_3">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txtApplyHeading"
+                    style="@style/Theme.YepKart.H6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:padding="@dimen/offset_20"
+                    android:text="@string/title_apply_jobs"/>
+
+            </RelativeLayout>
 
         </com.google.android.material.card.MaterialCardView>
 
     </LinearLayout>
     
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
