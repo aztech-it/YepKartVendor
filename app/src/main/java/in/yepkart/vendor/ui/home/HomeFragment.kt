@@ -6,12 +6,26 @@ import `in`.yepkart.vendor.controls.ExpandableHeightListView
 import `in`.yepkart.vendor.databinding.FragmentHomeBinding
 import `in`.yepkart.vendor.enums.JobAction
 import `in`.yepkart.vendor.models.JobItem
+import android.content.Context
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
+import com.google.firebase.database.ChildEventListener
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.ktx.database
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
+import java.time.LocalDate
 
 class HomeFragment : Fragment() {
 
@@ -19,37 +33,33 @@ class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
+    private lateinit var layoutRefresh: SwipeRefreshLayout
     private lateinit var listUpcoming: ExpandableHeightListView
     private lateinit var listApply: ExpandableHeightListView
 
     private lateinit var upcomingList: List<JobItem>
     private lateinit var applyList: List<JobItem>
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         homeViewModel = ViewModelProvider(this)[HomeViewModel::class.java]
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
 
+        layoutRefresh = binding.root.findViewById(R.id.layout_refresh)
         listUpcoming = binding.root.findViewById(R.id.listUpcoming)
         listApply = binding.root.findViewById(R.id.listApply)
 
         upcomingList = ArrayList()
         applyList = ArrayList()
 
-        (upcomingList as ArrayList<JobItem>).add(JobItem("Full Home Package", "Apartment Sanitization", "Home Sanitization", "Sanitization", "Aniket Jana", "1/2c, Ballygunge Place East, Ballygunge, Kolkata 700019", "berdyshevyurij@nkgursr.com", "+917001944712", "02 Apr, 2022", "10:15 am"))
-        (upcomingList as ArrayList<JobItem>).add(JobItem("Monthly Refresh Cleaning", "Bathroom Cleaninge", "Home Cleaning", "Cleaning Services", "Purnendu Biswas", "157a, Lenin Sarani, Dharmatala, Kolkata 700013", "akaminelinda@emvil.com", "+918001167406", "27 Mar, 2022", "02:00 pm"))
-        (upcomingList as ArrayList<JobItem>).add(JobItem("Full Home Essential Package", "Full Home Essential Package", "Home Cleaning", "Cleaning Services", "Dipen Lahiri", "37/a Nirmal Chandra Street, Bowbazar, Kolkata 700012", "justinpog@singmails.com", "+917439657979", "24 Mar, 2022", "9:30 am"))
+        loadCommunicationData(binding.root.context)
+        loadApplicationData(binding.root.context)
 
-        val upcomingAdapter = JobAdapter(binding.root.context, upcomingList, JobAction.COMMUNICATION)
-        listUpcoming.adapter = upcomingAdapter
-        listUpcoming.isExpanded = true
-
-        (applyList as ArrayList<JobItem>).add(JobItem("Full Home Package", "Apartment Sanitization", "Home Sanitization", "Sanitization", "Aniket Jana", "1/2c, Ballygunge Place East, Ballygunge, Kolkata 700019", "berdyshevyurij@nkgursr.com", "+917001944712", "02 Apr, 2022", "10:15 am"))
-        (applyList as ArrayList<JobItem>).add(JobItem("Monthly Refresh Cleaning", "Bathroom Cleaninge", "Home Cleaning", "Cleaning Services", "Purnendu Biswas", "157a, Lenin Sarani, Dharmatala, Kolkata 700013", "akaminelinda@emvil.com", "+918001167406", "27 Mar, 2022", "02:00 pm"))
-        (applyList as ArrayList<JobItem>).add(JobItem("Full Home Essential Package", "Full Home Essential Package", "Home Cleaning", "Cleaning Services", "Dipen Lahiri", "37/a Nirmal Chandra Street, Bowbazar, Kolkata 700012", "justinpog@singmails.com", "+917439657979", "24 Mar, 2022", "9:30 am"))
-
-        val applyAdapter = JobAdapter(binding.root.context, applyList, JobAction.APPLICATION)
-        listApply.adapter = applyAdapter
-        listApply.isExpanded = true
+        layoutRefresh.setOnRefreshListener(OnRefreshListener {
+            loadCommunicationData(binding.root.context)
+            loadApplicationData(binding.root.context)
+            layoutRefresh.isRefreshing = false
+        })
 
         return binding.root
     }
@@ -57,5 +67,118 @@ class HomeFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    private fun loadCommunicationData(mContext: Context) {
+        val firestore = Firebase.firestore
+
+        (upcomingList as ArrayList<JobItem>).clear()
+
+        firestore.collection("order").whereEqualTo("vender.vender_mobile", "+917980303174").limit(5).get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+                    val customer = document.data.getValue("customer") as Map<*, *>
+
+                    val dateString = document.data.getValue("service_date").toString()
+                    val dateArray = dateString.split("/")
+
+                    val day = dateArray[0].toInt()
+                    val month = dateArray[1].toInt()
+                    val year = dateArray[2].toInt()
+
+                    val date = LocalDate.of(year, month, day)
+
+                    (upcomingList as ArrayList<JobItem>).add(
+                        JobItem(
+                            document.data.getValue("service_job").toString(),
+                            document.data.getValue("service_name").toString(),
+                            document.data.getValue("service_subcategory").toString(),
+                            document.data.getValue("service_category").toString(),
+                            customer["customer_name"].toString(),
+                            customer["customer_address"].toString(),
+                            customer["customer_email"].toString(),
+                            customer["customer_mobile"].toString(),
+                            date,
+                            document.data.getValue("service_time").toString()
+                        )
+                    )
+                }
+
+                (upcomingList as ArrayList<JobItem>).sortWith(compareBy<JobItem> { it.serviceDate.year }.thenBy { it.serviceDate.month }.thenBy { it.serviceDate.dayOfMonth })
+
+                val upcomingAdapter = JobAdapter(mContext, upcomingList, JobAction.COMMUNICATION)
+                listUpcoming.adapter = upcomingAdapter
+                listUpcoming.isExpanded = true
+            }
+    }
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    private fun loadApplicationData(mContext: Context) {
+        val database = Firebase.database.reference
+        val firestore = Firebase.firestore
+
+        (applyList as ArrayList<JobItem>).clear()
+
+        database.child("vendors").orderByChild("mobile").equalTo("+917980303174").addChildEventListener(object: ChildEventListener {
+            override fun onChildAdded(snapshot: DataSnapshot, previousChildName: String?) {
+                val services = snapshot.child("services").value as ArrayList<*>
+
+                for (service in services) {
+                    firestore.collection("order").whereEqualTo("service_subcategory", service.toString()).limit(5).get()
+                        .addOnSuccessListener { documents ->
+                            for (document in documents) {
+                                val customer = document.data.getValue("customer") as Map<*, *>
+
+                                val dateString = document.data.getValue("service_date").toString()
+                                val dateArray = dateString.split("/")
+
+                                val day = dateArray[0].toInt()
+                                val month = dateArray[1].toInt()
+                                val year = dateArray[2].toInt()
+
+                                val date = LocalDate.of(year, month, day)
+
+                                (applyList as ArrayList<JobItem>).add(
+                                    JobItem(
+                                        document.data.getValue("service_job").toString(),
+                                        document.data.getValue("service_name").toString(),
+                                        document.data.getValue("service_subcategory").toString(),
+                                        document.data.getValue("service_category").toString(),
+                                        customer["customer_name"].toString(),
+                                        customer["customer_address"].toString(),
+                                        customer["customer_email"].toString(),
+                                        customer["customer_mobile"].toString(),
+                                        date,
+                                        document.data.getValue("service_time").toString()
+                                    )
+                                )
+                            }
+
+                            (applyList as ArrayList<JobItem>).sortWith(compareBy<JobItem> { it.serviceDate.year }.thenByDescending { it.serviceDate.month }.thenByDescending { it.serviceDate.dayOfMonth })
+
+                            val applyAdapter = JobAdapter(mContext, applyList, JobAction.APPLICATION)
+                            listApply.adapter = applyAdapter
+                            listApply.isExpanded = true
+                        }
+                }
+            }
+
+            override fun onChildChanged(snapshot: DataSnapshot, previousChildName: String?) {
+
+            }
+
+            override fun onChildRemoved(snapshot: DataSnapshot) {
+
+            }
+
+            override fun onChildMoved(snapshot: DataSnapshot, previousChildName: String?) {
+
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+
+            }
+        })
     }
 }

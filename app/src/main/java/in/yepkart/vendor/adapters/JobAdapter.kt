@@ -17,6 +17,9 @@ import androidx.core.content.ContextCompat.startActivity
 
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
+import androidx.annotation.RequiresApi
+import java.time.format.DateTimeFormatter
 
 
 class JobAdapter(private var mContext: Context, private var jobList: List<JobItem>, private var action: JobAction): BaseAdapter() {
@@ -33,10 +36,13 @@ class JobAdapter(private var mContext: Context, private var jobList: List<JobIte
         return position.toLong()
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     @SuppressLint("ViewHolder", "InflateParams", "UseCompatLoadingForDrawables")
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val jobItem = jobList[position]
         val itemView = LayoutInflater.from(mContext).inflate(R.layout.item_job, null, false)
+
+        val formatter = DateTimeFormatter.ofPattern("dd MMM, yyyy")
 
         val txtServiceJob = itemView.findViewById<TextView>(R.id.txtServiceJob)
         val txtServiceCategory = itemView.findViewById<TextView>(R.id.txtServiceCategory)
@@ -51,7 +57,7 @@ class JobAdapter(private var mContext: Context, private var jobList: List<JobIte
         txtServiceCategory.text = jobItem.subCategory
         txtCustomerName.text = jobItem.customerName
         txtCustomerAddress.text = jobItem.customerAddress
-        txtServiceDate.text = jobItem.serviceDate
+        txtServiceDate.text = jobItem.serviceDate.format(formatter).uppercase()
         txtServiceTime.text = jobItem.serviceTime.uppercase()
 
         when(action) {
@@ -78,6 +84,22 @@ class JobAdapter(private var mContext: Context, private var jobList: List<JobIte
 
                 btnAction1.setCompoundDrawablesWithIntrinsicBounds(null, drawable, null, null)
                 btnAction1.setText(R.string.title_finish_now)
+            }
+            JobAction.COMPLETION -> {
+                val drawable = ContextCompat.getDrawable(mContext, R.drawable.ic_success)
+                drawable!!.setTint(mContext.resources.getColor(R.color.colorSuccessDark))
+
+                btnAction1.setCompoundDrawablesWithIntrinsicBounds(null, drawable, null, null)
+                btnAction1.setText(R.string.title_finish_now)
+                btnAction1.setTextColor(mContext.resources.getColor(R.color.colorSuccessDark))
+            }
+            JobAction.CANCELLATION -> {
+                val drawable = ContextCompat.getDrawable(mContext, R.drawable.ic_error)
+                drawable!!.setTint(mContext.resources.getColor(R.color.colorDangerDark))
+
+                btnAction1.setCompoundDrawablesWithIntrinsicBounds(null, drawable, null, null)
+                btnAction1.setText(R.string.title_finish_now)
+                btnAction1.setTextColor(mContext.resources.getColor(R.color.colorDangerDark))
             }
         }
 

@@ -3,5 +3,7 @@ package `in`.yepkart.vendor.enums
 enum class JobAction {
     COMMUNICATION,
     APPLICATION,
-    VERIFICATION
+    VERIFICATION,
+    COMPLETION,
+    CANCELLATION
 }
