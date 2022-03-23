@@ -35,7 +35,10 @@
     <string name="title_received_amount">RECEIVED AMOUNT</string>
     <string name="title_pending_amount">PENDING AMOUNT</string>
     <string name="title_call_now">CALL NOW</string>
-    <string name="title_send_message">SEND MESSAGE</string>
+    <string name="title_apply_now">APPLY NOW</string>
+    <string name="title_finish_now">FINISH JOB</string>
+    <string name="title_view_details">VIEW DETAILS</string>
+    <string name="title_view_all">VIEW ALL</string>
 
     <string name="heading_transaction_history">Transaction History</string>
     <string name="heading_transaction_statement">Transaction Statement</string>

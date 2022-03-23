@@ -94,6 +94,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                         overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
                     }
                 }
+
+                clickedItem = 0
             }
 
             override fun onDrawerStateChanged(newState: Int) {

@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/offset_10">
+    android:paddingHorizontal="@dimen/offset_10"
+    android:paddingTop="@dimen/offset_10">
 
     <LinearLayout
         android:id="@+id/layout_main"
@@ -99,27 +100,31 @@
         android:orientation="horizontal">
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnAction1"
             android:layout_width="@dimen/common_0"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="?selectableItemBackground"
             android:drawableTop="@drawable/ic_call"
             android:drawablePadding="@dimen/offset_10"
-            android:paddingVertical="@dimen/offset_15"
+            android:drawableTint="@color/colorInfoDark"
+            android:paddingVertical="@dimen/offset_10"
             android:text="@string/title_call_now"
-            android:textColor="@color/colorText"
+            android:textColor="@color/colorInfoDark"
             style="@style/Theme.YepKart.H6"/>
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnAction2"
             android:layout_width="@dimen/common_0"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="?selectableItemBackground"
-            android:drawableTop="@drawable/ic_mail"
+            android:drawableTop="@drawable/ic_details"
             android:drawablePadding="@dimen/offset_10"
-            android:paddingVertical="@dimen/offset_15"
-            android:text="@string/title_send_message"
-            android:textColor="@color/colorText"
+            android:drawableTint="@color/colorInfoDark"
+            android:paddingVertical="@dimen/offset_10"
+                android:text="@string/title_view_details"
+            android:textColor="@color/colorInfoDark"
             style="@style/Theme.YepKart.H6"/>
 
     </LinearLayout>
