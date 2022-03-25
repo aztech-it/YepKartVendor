@@ -3,7 +3,6 @@ package `in`.yepkart.vendor.ui.home
 import `in`.yepkart.vendor.R
 import `in`.yepkart.vendor.adapters.JobAdapter
 import `in`.yepkart.vendor.controls.ExpandableHeightListView
-import `in`.yepkart.vendor.databinding.FragmentHomeBinding
 import `in`.yepkart.vendor.enums.JobAction
 import `in`.yepkart.vendor.models.JobItem
 import android.content.Context
@@ -12,26 +11,18 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
 import com.google.firebase.database.ChildEventListener
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import java.time.LocalDate
 
 class HomeFragment : Fragment() {
-
-    private lateinit var homeViewModel: HomeViewModel
-    private var _binding: FragmentHomeBinding? = null
-    private val binding get() = _binding!!
 
     private lateinit var layoutRefresh: SwipeRefreshLayout
     private lateinit var listUpcoming: ExpandableHeightListView
@@ -42,31 +33,25 @@ class HomeFragment : Fragment() {
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        homeViewModel = ViewModelProvider(this)[HomeViewModel::class.java]
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        val view = inflater.inflate(R.layout.fragment_home, container, false)
 
-        layoutRefresh = binding.root.findViewById(R.id.layout_refresh)
-        listUpcoming = binding.root.findViewById(R.id.listUpcoming)
-        listApply = binding.root.findViewById(R.id.listApply)
+        layoutRefresh = view.findViewById(R.id.layout_refresh)
+        listUpcoming = view.findViewById(R.id.listUpcoming)
+        listApply = view.findViewById(R.id.listApply)
 
         upcomingList = ArrayList()
         applyList = ArrayList()
 
-        loadCommunicationData(binding.root.context)
-        loadApplicationData(binding.root.context)
+        loadCommunicationData(view.context)
+        loadApplicationData(view.context)
 
-        layoutRefresh.setOnRefreshListener(OnRefreshListener {
-            loadCommunicationData(binding.root.context)
-            loadApplicationData(binding.root.context)
+        layoutRefresh.setOnRefreshListener {
+            loadCommunicationData(view.context)
+            loadApplicationData(view.context)
             layoutRefresh.isRefreshing = false
-        })
+        }
 
-        return binding.root
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+        return view
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -120,7 +105,8 @@ class HomeFragment : Fragment() {
 
         (applyList as ArrayList<JobItem>).clear()
 
-        database.child("vendors").orderByChild("mobile").equalTo("+917980303174").addChildEventListener(object: ChildEventListener {
+        database.child("vendors").orderByChild("mobile").equalTo("+917980303174").addChildEventListener(object:
+            ChildEventListener {
             override fun onChildAdded(snapshot: DataSnapshot, previousChildName: String?) {
                 val services = snapshot.child("services").value as ArrayList<*>
 
