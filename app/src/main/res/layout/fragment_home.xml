@@ -148,40 +148,42 @@
                 app:cardCornerRadius="@dimen/round_10"
                 app:cardElevation="@dimen/round_3">
 
-                <RelativeLayout
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/txtUpcomingHeading"
                         style="@style/Theme.YepKart.H6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentTop="true"
+                        android:layout_marginBottom="@dimen/offset_10"
                         android:padding="@dimen/offset_20"
                         android:text="@string/title_incoming_jobs"/>
+
+                    <include
+                        android:id="@+id/skeletonUpcoming"
+                        layout="@layout/layout_skeleton"/>
 
                     <in.yepkart.vendor.controls.ExpandableHeightListView
                         android:id="@+id/listUpcoming"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/txtUpcomingHeading"
-                        android:layout_marginTop="@dimen/offset_10"
                         android:divider="@android:color/transparent"
-                        android:dividerHeight="@dimen/offset_20"/>
+                        android:dividerHeight="@dimen/offset_20"
+                        android:visibility="gone"/>
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btnViewUpcoming"
+                        style="@style/Theme.YepKart.H6"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/listUpcoming"
-                        android:layout_alignParentBottom="true"
                         android:background="?selectableItemBackground"
                         android:text="@string/title_view_all"
-                        android:textColor="@color/colorText"
-                        style="@style/Theme.YepKart.H6"/>
+                        android:textColor="@color/colorText" />
 
-                </RelativeLayout>
+                </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
 
@@ -196,6 +198,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/common_175"
+                    android:contentDescription="@string/title_refer"
                     android:src="@drawable/img_refer"/>
 
             </com.google.android.material.card.MaterialCardView>
@@ -210,40 +213,42 @@
                 app:cardCornerRadius="@dimen/round_10"
                 app:cardElevation="@dimen/round_3">
 
-                <RelativeLayout
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/txtApplyHeading"
                         style="@style/Theme.YepKart.H6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentTop="true"
+                        android:layout_marginBottom="@dimen/offset_10"
                         android:padding="@dimen/offset_20"
-                        android:text="@string/title_apply_jobs"/>
+                        android:text="@string/title_incoming_jobs"/>
+
+                    <include
+                        android:id="@+id/skeletonApply"
+                        layout="@layout/layout_skeleton"/>
 
                     <in.yepkart.vendor.controls.ExpandableHeightListView
                         android:id="@+id/listApply"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/txtApplyHeading"
-                        android:layout_marginTop="@dimen/offset_10"
                         android:divider="@android:color/transparent"
-                        android:dividerHeight="@dimen/offset_20"/>
+                        android:dividerHeight="@dimen/offset_20"
+                        android:visibility="gone"/>
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btnViewApply"
+                        style="@style/Theme.YepKart.H6"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/listApply"
-                        android:layout_alignParentBottom="true"
                         android:background="?selectableItemBackground"
                         android:text="@string/title_view_all"
-                        android:textColor="@color/colorText"
-                        style="@style/Theme.YepKart.H6"/>
+                        android:textColor="@color/colorText" />
 
-                </RelativeLayout>
+                </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
 

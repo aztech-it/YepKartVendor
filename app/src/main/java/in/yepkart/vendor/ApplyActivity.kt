@@ -8,13 +8,13 @@ import android.view.View
 import android.view.WindowManager
 import androidx.appcompat.widget.Toolbar
 
-class DetailsActivity : AppCompatActivity() {
+class ApplyActivity : AppCompatActivity() {
 
     private lateinit var toolBar: Toolbar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_details)
+        setContentView(R.layout.activity_apply)
 
         toolBar = findViewById(R.id.toolbar)
 
@@ -27,7 +27,7 @@ class DetailsActivity : AppCompatActivity() {
             statusBarColor = Color.TRANSPARENT
         }
 
-        supportActionBar!!.title = "Job Details"
+        supportActionBar!!.title = "Apply for a Job"
         supportActionBar!!.setHomeButtonEnabled(true)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_back)

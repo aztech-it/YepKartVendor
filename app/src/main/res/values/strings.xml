@@ -39,6 +39,7 @@
     <string name="title_finish_now">FINISH JOB</string>
     <string name="title_view_details">VIEW DETAILS</string>
     <string name="title_view_all">VIEW ALL</string>
+    <string name="title_refer">REFER A FRIEND</string>
 
     <string name="heading_transaction_history">Transaction History</string>
     <string name="heading_transaction_statement">Transaction Statement</string>

@@ -16,6 +16,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.YepKart">
         <activity
+            android:name=".ApplyActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.YepKart.NoActionBar"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".ListActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.YepKart.NoActionBar"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
             android:name=".DetailsActivity"
             android:exported="false"
             android:screenOrientation="portrait"

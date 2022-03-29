@@ -1,10 +1,12 @@
 package `in`.yepkart.vendor.adapters
 
+import `in`.yepkart.vendor.ApplyActivity
 import `in`.yepkart.vendor.DetailsActivity
 import `in`.yepkart.vendor.R
 import `in`.yepkart.vendor.enums.JobAction
 import `in`.yepkart.vendor.models.JobItem
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -42,7 +44,8 @@ class JobAdapter(private var mContext: Context, private var jobList: List<JobIte
         val jobItem = jobList[position]
         val itemView = LayoutInflater.from(mContext).inflate(R.layout.item_job, null, false)
 
-        val formatter = DateTimeFormatter.ofPattern("dd MMM, yyyy")
+        val dateFormatter = DateTimeFormatter.ofPattern("dd MMM, yyyy")
+        val timeFormatter = DateTimeFormatter.ofPattern("hh:mm a")
 
         val txtServiceJob = itemView.findViewById<TextView>(R.id.txtServiceJob)
         val txtServiceCategory = itemView.findViewById<TextView>(R.id.txtServiceCategory)
@@ -53,12 +56,12 @@ class JobAdapter(private var mContext: Context, private var jobList: List<JobIte
         val btnAction1 = itemView.findViewById<Button>(R.id.btnAction1)
         val btnAction2 = itemView.findViewById<Button>(R.id.btnAction2)
 
-        txtServiceJob.text = jobItem.job
-        txtServiceCategory.text = jobItem.subCategory
+        txtServiceJob.text = jobItem.serviceJob
+        txtServiceCategory.text = jobItem.serviceSubcategory
         txtCustomerName.text = jobItem.customerName
         txtCustomerAddress.text = jobItem.customerAddress
-        txtServiceDate.text = jobItem.serviceDate.format(formatter).uppercase()
-        txtServiceTime.text = jobItem.serviceTime.uppercase()
+        txtServiceDate.text = jobItem.serviceDate.format(dateFormatter).uppercase()
+        txtServiceTime.text = jobItem.serviceDate.format(timeFormatter).uppercase()
 
         when(action) {
             JobAction.APPLICATION -> {
@@ -66,6 +69,14 @@ class JobAdapter(private var mContext: Context, private var jobList: List<JobIte
 
                 btnAction1.setCompoundDrawablesWithIntrinsicBounds(null, drawable, null, null)
                 btnAction1.setText(R.string.title_apply_now)
+
+                btnAction1.setOnClickListener {
+                    val intent = Intent(mContext, ApplyActivity::class.java)
+
+                    intent.putExtra("order_id", jobItem.orderId)
+                    mContext.startActivity(intent)
+                    (mContext as Activity).overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+                }
             }
             JobAction.COMMUNICATION -> {
                 val drawable = ContextCompat.getDrawable(mContext, R.drawable.ic_call)
@@ -105,7 +116,10 @@ class JobAdapter(private var mContext: Context, private var jobList: List<JobIte
 
         btnAction2.setOnClickListener {
             val intent = Intent(mContext, DetailsActivity::class.java)
+
+            intent.putExtra("order_id", jobItem.orderId)
             mContext.startActivity(intent)
+            (mContext as Activity).overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         }
 
         return itemView

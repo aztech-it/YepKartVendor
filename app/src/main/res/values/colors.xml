@@ -14,7 +14,8 @@
 
     <!-- COMMON COLORS -->
     <color name="colorMuted">#FFE9E9E9</color>
-    <color name="colorSkeleton">#FFDCDCDC</color>
+    <color name="colorSkeleton">#FFCCCCCC</color>
+    <color name="colorShimmer">#FFD2D2D2</color>
     <color name="colorHint">#FF999999</color>
     <color name="colorWhite">#FFFFFFFF</color>
     <color name="colorBlack">#FF000000</color>
